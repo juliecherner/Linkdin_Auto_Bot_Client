@@ -1,4 +1,4 @@
-import {array} from "../../../constants/MainPage.constants"
+import {array} from "./constants/Header.constants"
 
 const Header = () => {
     return (<div>
