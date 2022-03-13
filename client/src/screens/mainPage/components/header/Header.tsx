@@ -1,9 +1,9 @@
 import {array} from "./constants/Header.constants"
 
-const Header = () => {
+const Header: React.FC = () => {
     return (<div>
         <div>Header</div>
-        <div>{array.map((arr: number)=> <div>{arr}</div>)}</div>
+        <div>{array.map((arr: number, index:number)=> <div key={index}>{arr}</div>)}</div>
     </div>)
     }
     
