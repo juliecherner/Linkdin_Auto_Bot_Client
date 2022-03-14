@@ -1,7 +1,6 @@
 import React from "react";
 import MainPage from "./screens/mainPage/MainPage";
 import Login from "./screens/login/Login";
-import Logout from "./screens/logout/Logout";
 import ScrapingStrategies from "./screens/scraping-strategies/ScrapingStrategies";
 import About from "./screens/about/About";
 import NotFound from "./screens/not-found/NotFound";
@@ -14,7 +13,6 @@ function App() {
         <Route path="/" element={<MainPage />}></Route>
         <Route path="about" element={<MainPage />}></Route>
         <Route path="login" element={<Login />}></Route>
-        <Route path="logout" element={<Logout />}></Route>
         <Route
           path="scraping-strategies"
           element={<ScrapingStrategies />}
