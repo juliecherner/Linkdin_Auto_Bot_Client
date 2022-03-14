@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/morMBen/Linkdin_Auto_Bot/issues"
   },
-  "homepage": "https://github.com/morMBen/Linkdin_Auto_Bot#readme"
+  "homepage": "https://github.com/morMBen/Linkdin_Auto_Bot#readme",
+  "dependencies": {
+    "react-router-dom": "^6.2.2"
+  }
 }
