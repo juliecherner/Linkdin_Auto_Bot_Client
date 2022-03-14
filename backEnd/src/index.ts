@@ -1,4 +1,4 @@
-import { app } from './app';
+import { app } from '../app';
 
 const PORT = 8080;
 const SERVER_MESSAGE = `Express listens on http://127.0.0.1:${PORT}`;

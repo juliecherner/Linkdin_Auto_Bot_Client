@@ -1,5 +1,5 @@
 import express, { Request, Response } from "express";
-import { getAllProfileHandler } from "../controllers/profile.controller";
+import { getAllProfilesHandler } from "../controllers/profile.controller";
 
 
 
@@ -12,9 +12,8 @@ Router.get('/healthcheck', (req: Request, res: Response): void => {
 
 
 Router.get(
-  '/get-tasks-by-project/:projectId', 
-  // validateResource(findTaskSchema),
-  getAllProfileHandler,
+  '/get-all-profiles', 
+  getAllProfilesHandler,
 );
 
 
