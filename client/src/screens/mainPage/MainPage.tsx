@@ -2,18 +2,20 @@ import {useEffect, useState} from "react"
 import Header from "./components/header/Header"
 import CardList from "./components/cardList/CardList"
 import Togglers from "./components/togglers/Togglers"
+import ImageArea from "./components/imageArea/imageArea"
 import {data} from "../../fakeData"
 import {I_Owner} from "../../types/types"
 
 console.log("data from main", data)
+
 const MainPage: React.FC = () => {
     const [mode, setMode] = useState("Relevant")
     const [actualData, setActualData] = useState<I_Owner[]>([])
 
     console.log("actial data check it!!!", actualData)
 
-    const changeMode = (event: any) => {
-    setMode(event.target.innerText)
+    const changeMode = (event: React.MouseEvent<HTMLButtonElement>, toggler:string) => {
+    setMode(toggler) 
     }
 
     const trackMode = (mode: string) => {
@@ -42,7 +44,7 @@ const MainPage: React.FC = () => {
 return (<div>
     <Header/>
     <Togglers changeMode={changeMode}/>
-    {mode}
+    <ImageArea/>
     <CardList owners={actualData}/>
     </div>)
 }

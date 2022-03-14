@@ -2,7 +2,7 @@ import {array} from "./constants/Header.constants"
 
 const Header: React.FC = () => {
     return (<div>
-        <div>Header</div>
+        <div className="text-red-500">Header</div>
         <div>{array.map((arr: number, index:number)=> <div key={index}>{arr}</div>)}</div>
     </div>)
     }

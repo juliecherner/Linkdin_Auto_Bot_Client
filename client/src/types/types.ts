@@ -12,5 +12,6 @@ export interface I_Owner {
     tags: string[];
     imageSrc: string;
     comment: string;
-    dateScraped: Date;
+    createdAt: Date;
+    updatedAt: Date;
   }
