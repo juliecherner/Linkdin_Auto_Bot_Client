@@ -1,5 +1,5 @@
 import express, { Request, Response } from "express";
-import { getAllProfilesHandler } from "../controllers/profile.controller";
+import * as profileHandlers from "../controllers/profile.controller";
 
 
 
@@ -13,7 +13,7 @@ Router.get('/healthcheck', (req: Request, res: Response): void => {
 
 Router.get(
   '/get-all-profiles', 
-  getAllProfilesHandler,
+  profileHandlers.getAllProfiles,
 );
 
 

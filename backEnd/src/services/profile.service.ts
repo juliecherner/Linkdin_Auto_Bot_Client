@@ -1,5 +1,5 @@
 
 
-export async function getAllProfileService() {
+export async function getAllProfiles() {
   
 }
