@@ -2,8 +2,6 @@ import { Request, Response } from 'express';
 
 
 
-export async function getAllProfilesHandler(req: Request, res: Response) {
-  // const profile = await getAllProfilesService({ projectId });
+export async function getAllProfiles(req: Request, res: Response) {
   
-  // return res.send(profile);
 }

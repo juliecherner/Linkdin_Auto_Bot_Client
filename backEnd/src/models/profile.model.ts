@@ -1,12 +1,12 @@
 import mongoose from 'mongoose';
 
 export interface ProfileDocument extends mongoose.Document {
+  userId: string;
   _id: string;
   name: string;
   profileName: string;
   position: string;
   email: string;
-  //linkdinLink:only required field
   linkdinLink: string;
   isEmailSent: boolean;
   isStared: boolean;
@@ -18,6 +18,10 @@ export interface ProfileDocument extends mongoose.Document {
 }
 
 const profileSchema = new mongoose.Schema({
+  userId: {
+    type: mongoose.Types.ObjectId,
+    // required
+  },
   name: String,
   profileName: String,
   position: String,
