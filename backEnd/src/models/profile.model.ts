@@ -1,8 +1,22 @@
 import mongoose from 'mongoose';
+// interface I_Profile {
+//   userId: typeof mongoose.Types.ObjectId;
+//   name: string;
+//   profileName: string;
+//   position: string;
+//   email: string;
+//   linkdinLink: string;
+//   isEmailSent: boolean;
+//   isStared: boolean;
+//   isVmarked: boolean;
+//   tags: string[];
+//   imageSrc: string;
+//   comment: string;
+//   dateScraped: Date
+// }
 
 export interface ProfileDocument extends mongoose.Document {
-  userId: string;
-  _id: string;
+  userId: string; // typeof mongoose.Types.ObjectId;
   name: string;
   profileName: string;
   position: string;
@@ -14,12 +28,12 @@ export interface ProfileDocument extends mongoose.Document {
   tags: string[];
   imageSrc: string;
   comment: string;
-  dateScraped: Date;
+  dateScraped: Date
 }
 
-const profileSchema = new mongoose.Schema({
+const profileSchema:mongoose.Schema<ProfileDocument> = new mongoose.Schema({
   userId: {
-    type: mongoose.Types.ObjectId,
+    type: String// mongoose.Types.ObjectId,
     // required
   },
   name: String,
@@ -33,9 +47,10 @@ const profileSchema = new mongoose.Schema({
   tags: [String],
   imageSrc: String,
   comment: String,
-  dateScraped: Date,
+}, {
+  timestamps: true,
 });
 
 const ProfileModel = mongoose.model<ProfileDocument>('Profile', profileSchema);
 
-export default profileSchema;
+export default ProfileModel;
