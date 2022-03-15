@@ -14,8 +14,6 @@ export async function addProfile(
   }  
 }
 
-
-
 export async function getAllProfiles() {
-
+  return ProfileModel.find({});
 }
