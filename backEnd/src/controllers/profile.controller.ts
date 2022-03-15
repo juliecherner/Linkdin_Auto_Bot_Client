@@ -3,6 +3,7 @@ import { getErrorMessage } from '../utils/errors.util';
 import { ProfileDocument } from '../models/profile.model'
 import * as services from '../services/profile.service';
 
+// TODO: check if profile exist in deletedProfiles collection
 export async function addProfile(
   req: Request<{}, {}, ProfileDocument>,
   res: Response
@@ -47,6 +48,7 @@ export async function updateProfile(
   }
 }
 
+// TODO: collect emails to separate collection
 export async function deleteProfile(
   req: Request,
   res: Response
