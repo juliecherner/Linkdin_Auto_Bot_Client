@@ -18,6 +18,13 @@ export async function getAllProfiles() {
   return ProfileModel.find({}).lean();
 }
 
+export async function updateProfile(
+  query: FilterQuery<ProfileDocument>,
+  update: UpdateQuery<ProfileDocument>,
+  options: QueryOptions = { projection: 'email' },
+) {
+  return ProfileModel.findOneAndUpdate(query, update, options);
+}
 
 
 export async function deleteProfile(

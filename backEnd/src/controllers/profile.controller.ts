@@ -25,7 +25,27 @@ export async function getAllProfiles(req: Request, res: Response) {
   }
 }
 
+export async function updateProfile(
+  req: Request<{}, {}, ProfileDocument>,
+  res: Response
+) {
+  try {
+    const {profileId} = req.query;
+    const update = req.body;
+    if (!update) {
+      return res.status(400).send("Update required in body"); 
+    }
 
+    const result = await services.updateProfile({_id: profileId}, update, { new: true });
+    if (!result) {
+      return res.status(404).send("Profile not found");
+    }
+
+    return res.send(result);    
+  } catch (error) {
+    return res.status(500).send(getErrorMessage(error));
+  }
+}
 
 export async function deleteProfile(
   req: Request,
@@ -41,6 +61,6 @@ export async function deleteProfile(
 
     return res.send(result);
   } catch (error) {
-    return res.status(500).send("Profile deletion from DB failed");
+    return res.status(500).send(getErrorMessage(error));
   }
 }

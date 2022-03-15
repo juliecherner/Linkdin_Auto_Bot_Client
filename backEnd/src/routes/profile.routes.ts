@@ -1,6 +1,7 @@
 import express, { Request, Response } from 'express';
 import * as handlers from '../controllers/profile.controller';
 
+// TODO: Create content and security validation middlewere for all input
 
 const Router = express.Router();
 
