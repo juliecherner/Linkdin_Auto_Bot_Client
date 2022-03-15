@@ -28,7 +28,8 @@ export interface ProfileDocument extends mongoose.Document {
   tags: string[];
   imageSrc: string;
   comment: string;
-  dateScraped: Date
+  createdAt: Date
+  updatedAt: Date
 }
 
 const profileSchema:mongoose.Schema<ProfileDocument> = new mongoose.Schema({

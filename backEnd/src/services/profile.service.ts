@@ -15,5 +15,20 @@ export async function addProfile(
 }
 
 export async function getAllProfiles() {
-  return ProfileModel.find({});
+  return ProfileModel.find({}).lean();
+}
+
+export async function updateProfile(
+  query: FilterQuery<ProfileDocument>,
+  update: UpdateQuery<ProfileDocument>,
+  options: QueryOptions = { new: true },
+) {
+  return ProfileModel.findOneAndUpdate(query, update, options);
+}
+
+
+export async function deleteProfile(
+  query: FilterQuery<ProfileDocument>,
+  options: QueryOptions = { projection: 'email' }) {
+  return ProfileModel.findOneAndRemove(query, options);
 }
