@@ -1,5 +1,5 @@
 import express, { Request, Response } from 'express';
-import * as handlers from '../controllers/profile.controller';
+import * as profileHandlers from '../controllers/profile.controller';
 
 // TODO: Create content and security validation middlewere for all input
 
@@ -9,12 +9,12 @@ Router.get('/healthcheck', (req: Request, res: Response): void => {
   res.sendStatus(200);
 });
 
-Router.post('/add-profiles', handlers.addProfile);
+Router.post('/profiles', profileHandlers.addProfile);
 
-Router.get('/get-all-profiles', handlers.getAllProfiles);
+Router.get('/profiles', profileHandlers.getAllProfiles);
 
-Router.put('/update-profile', handlers.updateProfile);
+Router.put('/profile', profileHandlers.updateProfile);
 
-Router.delete('/delete-profile', handlers.deleteProfile);
+Router.delete('/profile', profileHandlers.deleteProfile);
 
 export default Router;
