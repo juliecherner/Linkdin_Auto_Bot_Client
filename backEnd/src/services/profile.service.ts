@@ -21,7 +21,7 @@ export async function getAllProfiles() {
 export async function updateProfile(
   query: FilterQuery<ProfileDocument>,
   update: UpdateQuery<ProfileDocument>,
-  options: QueryOptions = { projection: 'email' },
+  options: QueryOptions = { new: true },
 ) {
   return ProfileModel.findOneAndUpdate(query, update, options);
 }
