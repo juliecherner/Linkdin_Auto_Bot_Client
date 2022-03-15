@@ -12,5 +12,6 @@ Router.post('/add-profiles', handlers.addProfile);
 
 Router.get('/get-all-profiles', handlers.getAllProfiles);
 
+Router.delete('/delete-profile', handlers.deleteProfile);
 
 export default Router;

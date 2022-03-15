@@ -28,14 +28,18 @@ export async function getAllProfiles(req: Request, res: Response) {
 
 
 export async function deleteProfile(
-  req: Request<{}, {}, {}, ProfileDocument>,
+  req: Request,
   res: Response
 ) {
   try {
-    const { _id } = req.query;
-    const result = await services.deleteProfile({ _id });
+    const { profileId } = req.query;
+    
+    const result = await services.deleteProfile({ _id: profileId });
+    if (!result) {
+      return res.status(404).send("Profile not found");
+    }
 
-    return res.send("Profile deletion from DB success");
+    return res.send(result);
   } catch (error) {
     return res.status(500).send("Profile deletion from DB failed");
   }
