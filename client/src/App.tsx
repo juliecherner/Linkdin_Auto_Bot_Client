@@ -12,7 +12,6 @@ const App: React.FC = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainPage />}></Route>
-        <Route path="about" element={<MainPage />}></Route>
         <Route path="login" element={<LoginPage />}></Route>
         <Route
           path="scraping-strategies"
