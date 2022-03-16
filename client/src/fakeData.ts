@@ -12,7 +12,8 @@ export interface I_Owner {
   tags: string[];
   imageSrc: string;
   comment: string;
-  dateScraped: Date;
+  createdAt: Date;
+  updatedAt: Date;
 }
 
 export const data: I_Owner[] = [
@@ -23,13 +24,14 @@ export const data: I_Owner[] = [
     position: `ceo`,
     email: `email1@mymail.com`,
     linkdinLink: `url1`,
-    isStared: false,
+    isStared: true,
     isEmailSent: false,
-    isVmarked: false,
-    imageSrc: `imageSrc1`,
-    comment: `string1`,
-    dateScraped: new Date(),
+    isVmarked: true,
+    imageSrc: `https://www.pikpng.com/pngl/m/451-4516677_cartoon-person-without-face-clipart.png`,
+    comment: ``,
     tags: [`tag1`, `tag2`, `tag3`],
+    createdAt: new Date(),
+    updatedAt: new Date()
   },
   {
     _id: `2`,
@@ -40,11 +42,12 @@ export const data: I_Owner[] = [
     linkdinLink: `url2`,
     isStared: false,
     isEmailSent: false,
-    isVmarked: false,
-    imageSrc: `imageSrc2`,
+    isVmarked: true,
+    imageSrc: `https://www.pikpng.com/pngl/m/451-4516677_cartoon-person-without-face-clipart.png`,
     comment: `string2`,
-    dateScraped: new Date(),
     tags: [`tag4`, `tag5`, `tag6`],
+    createdAt: new Date(),
+    updatedAt: new Date()
   },
   {
     _id: `3`,
@@ -55,11 +58,12 @@ export const data: I_Owner[] = [
     linkdinLink: `url3`,
     isStared: false,
     isEmailSent: false,
-    isVmarked: false,
-    imageSrc: `imageSrc3`,
+    isVmarked: true,
+    imageSrc: `https://www.pikpng.com/pngl/m/451-4516677_cartoon-person-without-face-clipart.png`,
     comment: `string3`,
-    dateScraped: new Date(),
     tags: [`tag3`, `tag4`, `tag5`],
+    createdAt: new Date(),
+    updatedAt: new Date()
   },
   {
     _id: `4`,
@@ -68,13 +72,14 @@ export const data: I_Owner[] = [
     position: `cto`,
     email: `email4@mymail.com`,
     linkdinLink: `url4`,
-    isStared: false,
+    isStared: true,
     isEmailSent: false,
     isVmarked: false,
-    imageSrc: `imageSrc4`,
+    imageSrc: `https://www.pikpng.com/pngl/m/451-4516677_cartoon-person-without-face-clipart.png`,
     comment: `string4`,
-    dateScraped: new Date(),
     tags: [`tag1`, `tag2`, `tag3`],
+    createdAt: new Date(),
+    updatedAt: new Date()
   },
   {
     _id: `5`,
@@ -86,10 +91,11 @@ export const data: I_Owner[] = [
     isStared: false,
     isEmailSent: false,
     isVmarked: false,
-    imageSrc: `imageSrc5`,
+    imageSrc: `https://www.pikpng.com/pngl/m/451-4516677_cartoon-person-without-face-clipart.png`,
     comment: `string5`,
-    dateScraped: new Date(),
     tags: [`tag2`, `tag3`, `tag4`],
+    createdAt: new Date(),
+    updatedAt: new Date()
   },
   {
     _id: `6`,
@@ -101,10 +107,11 @@ export const data: I_Owner[] = [
     isStared: false,
     isEmailSent: false,
     isVmarked: false,
-    imageSrc: `imageSrc6`,
+    imageSrc: `https://www.pikpng.com/pngl/m/451-4516677_cartoon-person-without-face-clipart.png`,
     comment: `string6`,
-    dateScraped: new Date(),
     tags: [`tag3`, `tag4`, `tag5`],
+    createdAt: new Date(),
+    updatedAt: new Date()
   },
   {
     _id: `7`,
@@ -116,10 +123,11 @@ export const data: I_Owner[] = [
     isStared: false,
     isEmailSent: false,
     isVmarked: false,
-    imageSrc: `imageSrc7`,
+    imageSrc: `https://www.pikpng.com/pngl/m/451-4516677_cartoon-person-without-face-clipart.png`,
     comment: `string7`,
-    dateScraped: new Date(),
     tags: [`tag1`, `tag6`, `tag7`],
+    createdAt: new Date(),
+    updatedAt: new Date()
   },
   {
     _id: `8`,
@@ -131,10 +139,11 @@ export const data: I_Owner[] = [
     isStared: false,
     isEmailSent: false,
     isVmarked: false,
-    imageSrc: `imageSrc8`,
+    imageSrc: `https://www.pikpng.com/pngl/m/451-4516677_cartoon-person-without-face-clipart.png`,
     comment: `string8`,
-    dateScraped: new Date(),
     tags: [`tag1`, `tag4`, `tag6`],
+    createdAt: new Date(),
+    updatedAt: new Date()
   },
   {
     _id: `9`,
@@ -146,10 +155,11 @@ export const data: I_Owner[] = [
     isStared: false,
     isEmailSent: false,
     isVmarked: false,
-    imageSrc: `imageSrc9`,
+    imageSrc: `https://www.pikpng.com/pngl/m/451-4516677_cartoon-person-without-face-clipart.png`,
     comment: `string9`,
-    dateScraped: new Date(),
     tags: [`tag1`, `tag2`, `tag5`],
+    createdAt: new Date(),
+    updatedAt: new Date()
   },
   {
     _id: `10`,
@@ -161,9 +171,10 @@ export const data: I_Owner[] = [
     isStared: false,
     isEmailSent: false,
     isVmarked: false,
-    imageSrc: `imageSrc10`,
+    imageSrc: `https://www.pikpng.com/pngl/m/451-4516677_cartoon-person-without-face-clipart.png`,
     comment: `string10`,
-    dateScraped: new Date(),
     tags: [`tag1`, `tag3`, `tag5`],
+    createdAt: new Date(),
+    updatedAt: new Date()
   },
 ];

@@ -1,24 +1,24 @@
 import React from "react";
-import MainPage from "./screens/mainPage/MainPage";
-import Login from "./screens/login/Login";
-import ScrapingStrategies from "./screens/scraping-strategies/ScrapingStrategies";
-import About from "./screens/about/About";
-import NotFound from "./screens/not-found/NotFound";
-import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-function App() {
+import MainPage from "./screens/mainPage/MainPage";
+import LoginPage from "./screens/loginPage/LoginPage";
+import StrategiesPage from "./screens/StrategiesPage/StrategiesPage";
+import AboutPage from "./screens/aboutPage/AboutPage";
+import NotFoundPage from "./screens/notFoundPage/NotFoundPage";
+import "./App.css";
+
+const App: React.FC = () => {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainPage />}></Route>
-        <Route path="about" element={<MainPage />}></Route>
-        <Route path="login" element={<Login />}></Route>
+        <Route path="login" element={<LoginPage />}></Route>
         <Route
           path="scraping-strategies"
-          element={<ScrapingStrategies />}
+          element={<StrategiesPage/>}
         ></Route>
-        <Route path="about" element={<About />}></Route>
-        <Route path="*" element={<NotFound />}></Route>
+        <Route path="about" element={<AboutPage />}></Route>
+        <Route path="*" element={<NotFoundPage />}></Route>
       </Routes>
     </BrowserRouter>
   );

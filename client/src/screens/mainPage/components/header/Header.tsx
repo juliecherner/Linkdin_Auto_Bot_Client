@@ -1,10 +1,16 @@
-import {array} from "./constants/Header.constants"
+import LoginButton from "../atoms/loginButton/LoginButton"
+import HeaderInput from "../atoms/headerInput/HeaderInput"
+import HeaderLogo from "../atoms/headerLogo/HeaderLogo"
+import Menu from "../atoms/menu/Menu"
 
-const Header = () => {
-    return (<div>
-        <div>Header</div>
-        <div>{array.map((arr: number)=> <div>{arr}</div>)}</div>
-    </div>)
+
+const Header: React.FC = () => {
+    return (<div className="header">
+                <Menu/>
+                <HeaderLogo/>
+                <HeaderInput/>
+                <LoginButton/>
+            </div>)
     }
     
 export default Header

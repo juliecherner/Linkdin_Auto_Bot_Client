@@ -1,1 +1,0 @@
-export const array: number[] = [1,3,2]
