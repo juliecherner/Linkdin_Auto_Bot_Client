@@ -16,7 +16,7 @@ export interface I_Owner {
   updatedAt: Date;
 }
 
-export const data: I_Owner[] = [
+export const fakeData: I_Owner[] = [
   {
     _id: `1`,
     name: `moshe`,
