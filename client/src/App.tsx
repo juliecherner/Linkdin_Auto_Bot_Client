@@ -7,7 +7,6 @@ import AboutPage from "./screens/aboutPage/AboutPage";
 import NotFoundPage from "./screens/notFoundPage/NotFoundPage";
 import Header from "./screens/header/Header";
 import "./App.css";
-
 const App: React.FC = () => {
   return (
     <BrowserRouter>
