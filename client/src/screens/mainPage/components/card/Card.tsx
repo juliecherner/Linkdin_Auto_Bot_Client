@@ -7,29 +7,24 @@ interface Props {
 }
 
 const Card: React.FC <Props> = ({owner}) =>{
-    return <div className="h-1/5 text-xs border-2 border-indigo-600 p-2">
-        <div className="grid grid-cols-3 border-2 border-green-600 gap-x-2">
-            <div>link to img{owner.imageSrc}</div>
-            <div className="col-span-2">
-                {/* <Link to="/"><div>{owner.linkdinLink}</div> */}
-                    <div>Name:{owner.name}</div>
-                 {/* </Link> */}
-            <div>right date {/* <div>{owner.dateScraped}</div> */}</div>     
+    return <div className="main-page-card">
+                <div className="main-page-card-general">
+                    <img className="object-fil h-10 rounded-full" src={owner.imageSrc} alt="profile"/>
+                    <div className="main-page-card-general-info">
+                        {/* <Link to="/"><div>{owner.linkdinLink}</div> */}
+                        <div className="main-page-card-general-image">{owner.name}</div>
+                        {/* </Link> */}
+                        <div>right date {/* {owner.updatedAt} */}</div>     
+                    </div>
+                </div>
+                <div className="main-page-card-position">{owner.position}</div>
+                <div className="main-page-card-position-info">
+                    <div><span>@</span>{owner.email}</div>
+                    <div className="main-page-card-position-info-tags">
+                    {owner.tags.map((tag: string) => <div key={tag}><span>#</span>{tag}</div>)}
                 </div>
             </div>
-        
-        {/* <div>{owner.companyName}</div> don't need by figma */}
-        <div>Position: {owner.position}</div>
-        
-        <div className="grid grid-cols-3">
-            <div>{owner.email}</div>
-            <div className="col-span-2">{JSON.stringify(owner.tags)}</div>
-        </div>
-
-        {/* <div>{owner.isEmailSent? "sent": "nor sent"}</div> */}
-
         <CardButtons owner={owner}/>
-        <div className="h-4 bg-[#F5F5F5]"></div>
     </div>
 }
 

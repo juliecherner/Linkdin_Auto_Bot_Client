@@ -9,10 +9,11 @@ import {I_Owner} from "../../types/types"
 console.log("data from main", data)
 
 const MainPage: React.FC = () => {
-    const [mode, setMode] = useState("Relevant")
+    const [mode, setMode] = useState<string>("Relevant")
     const [actualData, setActualData] = useState<I_Owner[]>([])
+    
+    console.log("actial data", actualData)
 
-    console.log("actial data check it!!!", actualData)
 
     const changeMode = (event: React.MouseEvent<HTMLButtonElement>, toggler:string) => {
     setMode(toggler) 
@@ -22,7 +23,8 @@ const MainPage: React.FC = () => {
         switch (mode){
             case "Relevant": 
                const first = data[0]
-                setActualData([first]) 
+               const first2 = data[1]
+                setActualData([first, first2]) 
            break;
             case "Latest": 
                 const second = data[1]
@@ -41,7 +43,7 @@ const MainPage: React.FC = () => {
         trackMode(mode)
     }, [mode])
 
-return (<div>
+return (<div className="main-page">
     <Header/>
     <Togglers changeMode={changeMode}/>
     <ImageArea/>

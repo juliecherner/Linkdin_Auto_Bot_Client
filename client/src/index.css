@@ -2,8 +2,92 @@
 @tailwind components;
 @tailwind utilities;
 
+.main-page {
+  @apply bg-[#F5F5F5];
+}
 .main-page--togglers {
-  @apply h-12 w-3/4 flex items-center gap-2 border-2 border-indigo-600 pl-6 bg-[#F5F5F5];
+  @apply h-12 p-4 flex flex-row gap-6 items-center;
+}
+
+.main-page--toggler-bold {
+  @apply font-bold;
+}
+.main-page-card-list {
+  @apply flex flex-col gap-2 p-2;
+}
+
+.main-page-card {
+  @apply h-1/5 text-xs p-4 bg-white;
+}
+
+.main-page-card-general {
+  @apply flex flex-row gap-x-2 h-12 items-center;
+}
+.main-page-card-general-image {
+  @apply font-medium text-sm;
+}
+
+.main-page-card-general-info {
+  @apply col-span-2;
+}
+.main-page-card-position {
+  @apply font-bold text-lg;
+}
+.main-page-card-position-info {
+  @apply grid grid-cols-3 text-[10px] pb-2;
+}
+
+.main-page-card-position-info-tags {
+  @apply col-span-2 flex flex-row gap-4;
+}
+
+.main-page-card-buttons {
+  @apply flex flex-row justify-between;
+}
+
+.main-page-card-buttons--actions {
+  @apply flex flex-row justify-end col-span-10 gap-3;
+}
+
+.header {
+  @apply h-12 flex flex-row gap-3 bg-white items-center pr-4 pl-4 relative;
+}
+
+.header-menu-content {
+  @apply bg-[#F5F5F5] absolute bg-white w-3/4 h-screen p-8 top-0 left-0;
+}
+
+.header-menu-content-title {
+  @apply flex flex-row justify-between;
+}
+
+.header-menu-content-elements {
+  @apply grid grid-rows-3 divide-y pt-3;
+}
+
+.header-menu-content-element {
+  @apply text-center py-3 font-bold;
+}
+
+.header-menu-content-button {
+  @apply pt-8;
+}
+
+.header-header-logo-image {
+  @apply h-8 rounded-md;
+  @layer object-fil;
+}
+
+.header-header-input {
+  @apply flex flex-row gap-2 h-8 items-center;
+}
+
+.header-header-input--input {
+  @apply focus:outline-none;
+}
+
+.header--login-button {
+  @apply text-indigo-600 border-solid border-2 border-indigo-600 rounded-md pl-2 pr-2 text-center;
 }
 
 body {
