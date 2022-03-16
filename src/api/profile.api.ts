@@ -1,5 +1,5 @@
 import axios from "axios";
-import { I_Owner } from "../types/types";
+import { I_Profile } from "../types/types";
 
 // const uri = process.env.ENV === "production"
 //   ? "https://<NAME OF APP>.herokuapp.com/api"
@@ -10,7 +10,7 @@ const ApiHeader = axios.create({ baseURL: uri, });
 export const getProfiles = async (
   filter: string | undefined = undefined,
   sortBy: string | undefined = undefined
-): Promise<I_Owner[]> => {
+): Promise<I_Profile[]> => {
   try {
     const { data } = await ApiHeader.get('/profile/profiles', {
       params: { filter, sortBy }
@@ -23,7 +23,7 @@ export const getProfiles = async (
   }
 }
 
-export const updateProfile = async (profileUpdate: I_Owner): Promise<I_Owner[]> => {
+export const updateProfile = async (profileUpdate: I_Profile): Promise<I_Profile[]> => {
   try {
     return await ApiHeader.put('/profile/profile', {
       profileUpdate
@@ -34,7 +34,7 @@ export const updateProfile = async (profileUpdate: I_Owner): Promise<I_Owner[]> 
   }
 }
 
-export const deleteItem = async (profileId: string): Promise<I_Owner[]> => {
+export const deleteItem = async (profileId: string): Promise<I_Profile[]> => {
   try {
     return await ApiHeader.delete('/profile/profile', { params: { profileId } });
   } catch (error) {
