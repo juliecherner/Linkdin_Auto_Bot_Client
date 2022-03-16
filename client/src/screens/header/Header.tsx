@@ -1,7 +1,7 @@
-import LoginButton from "../atoms/loginButton/LoginButton"
-import HeaderInput from "../atoms/headerInput/HeaderInput"
-import HeaderLogo from "../atoms/headerLogo/HeaderLogo"
-import Menu from "../atoms/menu/Menu"
+import LoginButton from "./components/loginButton/LoginButton"
+import HeaderInput from "./components/headerInput/HeaderInput"
+import HeaderLogo from "./components/headerLogo/HeaderLogo"
+import Menu from "./components/menu/Menu"
 
 
 const Header: React.FC = () => {

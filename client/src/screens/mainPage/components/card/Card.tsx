@@ -11,10 +11,10 @@ const Card: React.FC <Props> = ({owner}) =>{
                 <div className="main-page-card-general">
                     <img className="object-fil h-10 rounded-full" src={owner.imageSrc} alt="profile"/>
                     <div className="main-page-card-general-info">
-                        {/* <Link to="/"><div>{owner.linkdinLink}</div> */}
+                        <Link to={owner.linkdinLink}>
                         <div className="main-page-card-general-image">{owner.name}</div>
-                        {/* </Link> */}
-                        <div>right date {/* {owner.updatedAt} */}</div>     
+                        </Link>
+                        <div>{owner.createdAt.toString().slice(0,10)}</div>     
                     </div>
                 </div>
                 <div className="main-page-card-position">{owner.position}</div>

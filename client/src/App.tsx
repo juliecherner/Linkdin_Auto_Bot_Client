@@ -5,11 +5,13 @@ import LoginPage from "./screens/loginPage/LoginPage";
 import StrategiesPage from "./screens/StrategiesPage/StrategiesPage";
 import AboutPage from "./screens/aboutPage/AboutPage";
 import NotFoundPage from "./screens/notFoundPage/NotFoundPage";
+import Header from "./screens/header/Header";
 import "./App.css";
 
 const App: React.FC = () => {
   return (
     <BrowserRouter>
+          <Header />
       <Routes>
         <Route path="/" element={<MainPage />}></Route>
         <Route path="login" element={<LoginPage />}></Route>

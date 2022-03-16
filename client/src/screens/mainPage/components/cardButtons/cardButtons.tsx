@@ -19,7 +19,7 @@ const [showComment, setShowComment] = useState(false)
           {owner.comment.length > 0 ? <MessageOutlinedIcon/>: <ChatBubbleOutlineOutlinedIcon/>}
         </div>
         <div className="main-page-card-buttons--actions">
-          <div>{owner.isVmarked && <DoneIcon color="success"/>}</div>
+          <DoneIcon color="success"/>
           <CloseIcon color="error"/>
           <div>{owner.isStared? <div style={{color:"gold"}}><StarIcon/></div>: <div style={{color:"gray"}}><StarIcon/></div>}</div>
         </div>
