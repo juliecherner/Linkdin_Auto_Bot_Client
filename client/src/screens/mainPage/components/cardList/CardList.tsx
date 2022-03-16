@@ -1,13 +1,13 @@
 import Card from "../card/Card"
-import {I_Owner} from "../../../../types/types"
+import {I_Profile} from "../../../../types/types"
 
 interface Props {
-    owners: I_Owner[]
+    profiles: I_Profile[]
 }
 
-const CardList: React.FC <Props> = ({owners}) => {
+const CardList: React.FC <Props> = ({profiles}) => {
     return (<div className="main-page-card-list">
-       {owners.map((object: I_Owner) => <Card key={object._id} owner={object}/>)}
+       {profiles.map((object: I_Profile) => <Card key={object._id} profile={object}/>)}
     </div>)
     }
     
