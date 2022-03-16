@@ -1,4 +1,4 @@
-export interface I_Owner {
+export interface I_Profile {
     _id: string;
     name: string;
     companyName: string;
