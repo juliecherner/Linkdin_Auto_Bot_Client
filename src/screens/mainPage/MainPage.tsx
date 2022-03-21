@@ -7,9 +7,7 @@ import {ProfileContext} from "../../context/profile.context"
 
 const MainPage: React.FC = () => {
 
-const {profiles, setProfiles, mode} = useContext(ProfileContext)
-
-    console.log("actial data", profiles)
+const {setProfiles, mode} = useContext(ProfileContext)
 
     useEffect(() => {
         const trackMode = async()=>{
