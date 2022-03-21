@@ -1,23 +1,18 @@
-import {useEffect, useState} from "react"
+import {useEffect, useContext} from "react"
 import CardList from "./components/cardList/CardList"
 import Togglers from "./components/togglers/Togglers"
 import ImageArea from "./components/imageArea/imageArea"
-import {I_Profile} from "../../types/types"
 import Api from "../../api/Api"
-
+import {ProfileContext} from "../../context/profile.context"
 
 const MainPage: React.FC = () => {
-    const [mode, setMode] = useState<string>("Relevant")
-    const [profiles, setProfiles] = useState<I_Profile[]>([])
+
+const {profiles, setProfiles, mode} = useContext(ProfileContext)
 
     console.log("actial data", profiles)
 
-
-    const changeMode = (event: React.MouseEvent<HTMLButtonElement>, toggler:string) => {
-    setMode(toggler) 
-    }
-
-    const trackMode = async (mode: string) => {
+    useEffect(() => {
+        const trackMode = async()=>{
         switch (mode){
             case "Relevant": 
             const relevant = await Api.get("/api/profile/profiles")
@@ -34,18 +29,16 @@ const MainPage: React.FC = () => {
             default: 
             const defaultData = await Api.get("/api/profile/profiles")
             setProfiles(defaultData.data) 
-            
-    }}
+        }}
+        trackMode()
+    }, [mode, setProfiles])
 
-    useEffect(() => {
-        trackMode(mode)
-    }, [mode])
-
-return (<div className="main-page">
-    <Togglers changeMode={changeMode}/>
-    <ImageArea/>
-    <CardList profiles={profiles}/>
-    </div>)
+return (
+        <div className="main-page">
+            <Togglers/>
+            <ImageArea/>
+            <CardList/>
+        </div>)
 }
 
 export default MainPage

@@ -5,8 +5,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 
 interface routeObject {
-text: string;
-route: string;
+    text: string;
+    route: string;
 }
 
 const constants: routeObject[] = [{text:"Home", route:"/"}, {text:"Scraping Strategies", route: "/scraping-strategies"}, {text: "About", route: "/about"}]
@@ -32,8 +32,8 @@ const [openedMenu, setOpenedMenu] = useState(false)
                     </Link>
                     </div>)}
             </div>
-            <div className="header-menu-content-button">
-                <LoginButton />
+            <div className="header-menu-content-button" onClick={()=>setOpenedMenu(false)}>
+                <LoginButton/>
             </div>
         </div>}
     </>)
