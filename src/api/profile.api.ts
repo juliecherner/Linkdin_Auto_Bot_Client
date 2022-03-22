@@ -1,22 +1,15 @@
-import axios from "axios";
 import { I_Profile } from "../types/types";
-
-// const uri = process.env.ENV === "production"
-//   ? "https://<NAME OF APP>.herokuapp.com/api"
-//   : "http://localhost:8080/api";
-const uri = "http://localhost:8080/api";
-const ApiHeader = axios.create({ baseURL: uri, });
+import ApiHeader from "./Api"
 
 export const getProfiles = async (
-  filter: string | undefined = undefined,
-  sortBy: string | undefined = undefined
+  filter: string | undefined = undefined,//by field
+  sortBy: string | undefined = undefined //stared
 ): Promise<I_Profile[]> => {
   try {
-    const { data } = await ApiHeader.get('/profile/profiles', {
+    const { data } = await ApiHeader.get('api/profile/profiles', {
       params: { filter, sortBy }
     });
     return data;
-
   } catch (error) {
     console.error(error);
     throw error;
@@ -25,20 +18,20 @@ export const getProfiles = async (
 
 export const updateProfile = async (profileUpdate: I_Profile): Promise<I_Profile[]> => {
   try {
-    return await ApiHeader.put('/profile/profile', {
+    return await ApiHeader.put('api/profile/profile', {
       profileUpdate
     });
   } catch (error) {
     console.error(error);
-    throw error
+    throw error;
   }
 }
 
 export const deleteItem = async (profileId: string): Promise<I_Profile[]> => {
   try {
-    return await ApiHeader.delete('/profile/profile', { params: { profileId } });
+    return await ApiHeader.delete('api/profile/profile', { params: { profileId } });
   } catch (error) {
     console.error(error);
-    throw error
+    throw error;
   }
 }

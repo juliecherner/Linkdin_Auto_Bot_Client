@@ -1,22 +1,15 @@
-import {useState} from "react"
-interface Props {
-  changeMode: (event: React.MouseEvent<HTMLButtonElement>, toggler:string) => void
-}
+import {useContext} from "react"
+import {ProfileContext} from "../../../../context/profile.context"
+
 const togglers: string[] = ["Relevant", "Latest", "Stared"]
 
-const Togglers: React.FC <Props> = ({changeMode}) => {
-
-  const [mode, setMode] = useState<string>("")
-
-  //needs refactoring with context
-  const changeModeLocally = (toggler: string) =>{
-       setMode(toggler)
-  }
+const Togglers: React.FC = () => {
+  const {mode, setMode} = useContext(ProfileContext)
 
   return (
     <div className="main-page--togglers">
       {togglers.map((toggler: string) => <button className={(mode === toggler)? "main-page--toggler-bold": ""} key={toggler}
-      onClick={(event)=> {changeMode(event,toggler); changeModeLocally(toggler)}}>{toggler}</button>)}
+      onClick={()=> {setMode(toggler)}}>{toggler}</button>)}
     </div>
   );
 };
