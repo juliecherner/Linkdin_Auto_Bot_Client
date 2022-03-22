@@ -16,7 +16,7 @@ export const getProfiles = async (
   }
 }
 
-export const updateProfile = async (profileUpdate: I_Profile): Promise<void> => {
+export const updateProfile = async (profileUpdate: I_Profile): Promise<I_Profile[]> => {
   try {
     return await ApiHeader.put('api/profile/profile', {
       profileUpdate
@@ -27,7 +27,7 @@ export const updateProfile = async (profileUpdate: I_Profile): Promise<void> => 
   }
 }
 
-export const deleteItem = async (profileId: string): Promise<void> => {
+export const deleteItem = async (profileId: string): Promise<I_Profile[]> => {
   try {
     return await ApiHeader.delete('api/profile/profile', { params: { profileId } });
   } catch (error) {
