@@ -24,6 +24,9 @@ const AboutPage: React.FC = () => {
           {solution}
         </div>
       ))}
+      <div className="about-page-solutions-title">
+        contact us at yevgst7@gmail.com
+      </div>
     </div>
   );
 };
