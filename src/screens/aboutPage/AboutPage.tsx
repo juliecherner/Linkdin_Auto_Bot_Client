@@ -3,28 +3,27 @@ import { Link } from "react-router-dom";
 import logo from "../../assets/images/linkedin-crawler-image.jpeg";
 //
 const AboutPage: React.FC = () => {
+  const solutions = [
+    "web scraping",
+    "full stack website design",
+    "front end",
+    "back end",
+    "and more",
+  ];
+
   return (
-    <div className="  bg-slate-200 h-screen ">
-      <div className="bg-slate-200 text-center ">
-        <img className="about-logo-image" src={logo} alt="Velocity Autobot" />
-        <div className="absolute top-40 left-10 text-white text-2xl text-center">
-          We are Linkdin Auto Bot
-        </div>
-        <div className="text-center bg-slate-200 mx-4 my-4">
-          <q>we specialize in costumized solutions for the business market</q>
-        </div>
-        <div className="text-center bg-slate-100 mx-4 my-4">
-          we offer solutions in:
-        </div>
-        <h2 className="text-xl">web scraping</h2>
-        <h2 className="text-xl">full stack website design</h2>
-        <h2 className="text-xl">front end</h2>
-        <h2 className="text-xl">back end</h2>
-        <h2 className="text-xl">and more</h2>
-        <div className=" bg-slate-100  my-15">
-          <Link to={"/MainPage"}>contact us</Link>
-        </div>
+    <div className="about-page ">
+      <img className="" src={logo} alt="Velocity Autobot" />
+
+      <div className="about-page-quote">
+        <q>we specialize in costumized solutions for the business market</q>
       </div>
+      <div className="about-page-solutions-title">we offer solutions in:</div>
+      {solutions.map((solution) => (
+        <div key={solution} className="login-page-solution">
+          {solution}
+        </div>
+      ))}
     </div>
   );
 };
