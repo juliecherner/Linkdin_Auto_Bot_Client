@@ -1,15 +1,14 @@
 import axios from "axios";
 import { I_Profile } from "../types/types";
 
-// const uri = process.env.ENV === "production"
-//   ? "https://<NAME OF APP>.herokuapp.com/api"
-//   : "http://localhost:8080/api";
-const uri = "http://localhost:8080/api";
+const uri = process.env.ENV === "production"
+  ? "https://linkdin-auto-bot-back.herokuapp.com/api"
+  : "http://localhost:8080/api";
 const ApiHeader = axios.create({ baseURL: uri, });
 
 export const getProfiles = async (
-  filter: string | undefined = undefined,
-  sortBy: string | undefined = undefined
+  filter: object = {},
+  sortBy: object = {}
 ): Promise<I_Profile[]> => {
   try {
     const { data } = await ApiHeader.get('/profile/profiles', {
