@@ -1,51 +1,45 @@
-import {useEffect, useState} from "react"
-import CardList from "./components/cardList/CardList"
-import Togglers from "./components/togglers/Togglers"
-import ImageArea from "./components/imageArea/imageArea"
-import {I_Profile} from "../../types/types"
-import Api from "../../api/Api"
-
+import { useEffect, useContext } from "react";
+import CardList from "./components/cardList/CardList";
+import Togglers from "./components/togglers/Togglers";
+import ImageArea from "./components/imageArea/imageArea";
+import { ProfileContext } from "../../context/profile.context";
+import { getProfiles } from "../../api/profile.api";
 
 const MainPage: React.FC = () => {
-    const [mode, setMode] = useState<string>("Relevant")
-    const [profiles, setProfiles] = useState<I_Profile[]>([])
+  const { setProfiles, mode } = useContext(ProfileContext);
 
-    console.log("actial data", profiles)
+  useEffect(() => {
+    const trackMode = async () => {
+      switch (mode) {
+        case "Relevant":
+          const relevant = await getProfiles();
+          setProfiles(relevant);
+          break;
+        case "Latest":
+          //add sort
+          const latest = await getProfiles();
+          setProfiles(latest);
+          break;
+        case "Stared":
+          //add filter
+          const stared = await getProfiles();
+          setProfiles(stared);
+          break;
+        default:
+          const defaultData = await getProfiles();
+          setProfiles(defaultData);
+      }
+    };
+    trackMode();
+  }, [mode, setProfiles]);
 
+  return (
+    <div className="main-page">
+      <Togglers />
+      <ImageArea />
+      <CardList />
+    </div>
+  );
+};
 
-    const changeMode = (event: React.MouseEvent<HTMLButtonElement>, toggler:string) => {
-    setMode(toggler) 
-    }
-
-    const trackMode = async (mode: string) => {
-        switch (mode){
-            case "Relevant": 
-            const relevant = await Api.get("/api/profile/profiles")
-            setProfiles(relevant.data) 
-           break;
-            case "Latest": 
-            const latest = await Api.get("/api/profile/profiles")
-            setProfiles(latest.data) 
-                break;
-            case "Stared":
-                const stared = await Api.get("/api/profile/profiles")
-                setProfiles(stared.data)
-                break;
-            default: 
-            const defaultData = await Api.get("/api/profile/profiles")
-            setProfiles(defaultData.data) 
-            
-    }}
-
-    useEffect(() => {
-        trackMode(mode)
-    }, [mode])
-
-return (<div className="main-page">
-    <Togglers changeMode={changeMode}/>
-    <ImageArea/>
-    <CardList profiles={profiles}/>
-    </div>)
-}
-
-export default MainPage
+export default MainPage;

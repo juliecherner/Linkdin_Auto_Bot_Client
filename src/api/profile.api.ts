@@ -11,11 +11,10 @@ export const getProfiles = async (
   sortBy: object = {}
 ): Promise<I_Profile[]> => {
   try {
-    const { data } = await ApiHeader.get('/profile/profiles', {
+    const { data } = await ApiHeader.get('api/profile/profiles', {
       params: { filter, sortBy }
     });
     return data;
-
   } catch (error) {
     console.error(error);
     throw error;
@@ -24,20 +23,20 @@ export const getProfiles = async (
 
 export const updateProfile = async (profileUpdate: I_Profile): Promise<I_Profile[]> => {
   try {
-    return await ApiHeader.put('/profile/profile', {
+    return await ApiHeader.put('api/profile/profile', {
       profileUpdate
     });
   } catch (error) {
     console.error(error);
-    throw error
+    throw error;
   }
 }
 
 export const deleteItem = async (profileId: string): Promise<I_Profile[]> => {
   try {
-    return await ApiHeader.delete('/profile/profile', { params: { profileId } });
+    return await ApiHeader.delete('api/profile/profile', { params: { profileId } });
   } catch (error) {
     console.error(error);
-    throw error
+    throw error;
   }
 }
