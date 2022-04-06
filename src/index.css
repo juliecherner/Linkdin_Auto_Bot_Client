@@ -54,7 +54,7 @@
 }
 
 .header-menu-content {
-  @apply bg-[#F5F5F5] absolute bg-white w-3/4 h-screen p-8 top-0 left-0;
+  @apply bg-[#F5F5F5] absolute bg-white w-3/4 h-screen p-8 top-0 left-0 z-10;
 }
 
 .header-menu-content-title {
