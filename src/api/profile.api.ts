@@ -20,9 +20,8 @@ export const getProfiles = async (
 
 export const updateProfile = async (profileUpdate: I_Profile): Promise<I_Profile[]> => {
   try {
-    return await ApiHeader.put('api/profile/profile', {
-      profileUpdate
-    });
+    const { data } = await ApiHeader.put('api/profile/profile', profileUpdate);
+    return data;
   } catch (error: any | AxiosError) {
     printHTTPErrors(error);
     throw error;
