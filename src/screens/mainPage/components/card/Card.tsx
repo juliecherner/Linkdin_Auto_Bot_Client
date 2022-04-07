@@ -16,19 +16,16 @@ const Card: React.FC<Props> = ({ profile }) => {
           alt="profile"
         />
         <div className="main-page-card-general-info">
-          {/* profileLink */}
-          <Link to={profile.linkdinLink}>
-            <div className="main-page-card-general-image">{profile.name}</div>
+          <Link to={profile.profileLink}>
+            <div className="main-page-card-general-image">
+              <span>{profile.name}</span>
+            </div>
           </Link>
           <div>{profile.createdAt.toString().slice(0, 10)}</div>
         </div>
       </div>
       <div className="main-page-card-position">{profile.position}</div>
       <div className="main-page-card-position-info">
-        <div>
-          <span>@</span>
-          {profile.email}
-        </div>
         <div className="main-page-card-position-info-tags">
           {profile.tags.map((tag: string) => (
             <div key={tag}>

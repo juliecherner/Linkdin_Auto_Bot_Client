@@ -16,13 +16,11 @@ const MainPage: React.FC = () => {
           setProfiles(relevant);
           break;
         case "Latest":
-          //add sort
-          const latest = await getProfiles();
+          const latest = await getProfiles({}, { createdAt: -1 });
           setProfiles(latest);
           break;
         case "Stared":
-          //add filter
-          const stared = await getProfiles();
+          const stared = await getProfiles({ isStared: true }, {});
           setProfiles(stared);
           break;
         default:
