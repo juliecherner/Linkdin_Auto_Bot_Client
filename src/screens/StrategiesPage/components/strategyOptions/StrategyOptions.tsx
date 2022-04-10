@@ -1,35 +1,52 @@
-import React, { useContext, useState } from "react";
-import { I_Checkbox } from "../../../../types/types";
+import React, { useContext, useEffect } from "react";
+import { I_Search } from "../../../../types/types";
 import { SearchContext } from "../../../../context/search.context";
+import {
+  getSearchWords,
+  addSearchWord,
+  deleteSearchWord,
+} from "../../../../api/search.api";
 import IconButton from "@mui/material/IconButton";
 import ClearIcon from "@mui/icons-material/Clear";
 import AddCircleOutlineOutlinedIcon from "@mui/icons-material/AddCircleOutlineOutlined";
+import CheckBoxOutlinedIcon from "@mui/icons-material/CheckBoxOutlined";
 
 const StrategyOptions: React.FC = () => {
-  const { checkboxInputs, checkboxDispatch } = useContext(SearchContext);
+  const { searchWords, setSearchWords } = useContext(SearchContext);
 
-  const handleInput = (checkboxState: boolean, name: string) => {
-    const action = { name: name, payload: checkboxState };
-    checkboxDispatch(action);
+  const getAllSearchWords = async () => {
+    const allWords = await getSearchWords();
+    setSearchWords(allWords);
   };
+
+  useEffect(() => {
+    getAllSearchWords();
+  }, [searchWords]);
+
+  //   const deleteById = async (id: string) => {
+  //     console.log("id of deleted strategy", id);
+  //   };
+
+  //   const addWord = async () => {
+  //     console.log("added new word");
+  //   };
+
   return (
     <div className="flex flex-col gap-2 w-8/12 ">
       <div className="text-2xl">Search by</div>
-      {checkboxInputs.map((checkbox: I_Checkbox) => (
+      {searchWords.map((searchWord: I_Search) => (
         <div
-          key={checkbox.searchFor}
+          key={searchWord._id}
           className="flex flex-row place-content-between"
         >
+          <CheckBoxOutlinedIcon />
+          {searchWord.searchWord}
           <div>
-            <input
-              type="checkbox"
-              checked={checkbox.checked}
-              onChange={() => handleInput(checkbox.checked, checkbox.searchFor)}
-            />
-            <label className="ml-2">{checkbox.searchFor}</label>
-          </div>
-          <div>
-            <IconButton aria-label="delete" size="small">
+            <IconButton
+              aria-label="delete"
+              size="small"
+              onClick={() => console.log(searchWord._id)}
+            >
               <ClearIcon fontSize="inherit" />
             </IconButton>
           </div>

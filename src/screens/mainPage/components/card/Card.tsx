@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import CardButtons from "../cardButtons/cardButtons";
 import { I_Profile } from "../../../../types/types";
 
@@ -16,11 +15,11 @@ const Card: React.FC<Props> = ({ profile }) => {
           alt="profile"
         />
         <div className="main-page-card-general-info">
-          <Link to={profile.profileLink}>
+          <a href={profile.profileLink} target="_blank" rel="noreferrer">
             <div className="main-page-card-general-image">
               <span>{profile.name}</span>
             </div>
-          </Link>
+          </a>
           <div>{profile.createdAt.toString().slice(0, 10)}</div>
         </div>
       </div>

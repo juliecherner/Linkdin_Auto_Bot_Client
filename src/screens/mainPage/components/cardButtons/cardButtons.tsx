@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { ProfileContext } from "../../../../context/profile.context";
 import { updateProfile } from "../../../../api/profile.api";
 import { I_Profile } from "../../../../types/types";
 // import { printHTTPErrors } from "../utils/fetch.utils";
@@ -16,15 +17,18 @@ interface Props {
 const CardButtons: React.FC<Props> = ({ profile }) => {
   // const [showComment, setShowComment] = useState(false);
 
+  const { mode, trackMode } = useContext(ProfileContext);
+
+  //didn't worked
+  //const [changes, setChanges] = useState(false);
+
   const changeStaredMode = async (profile: I_Profile) => {
     const newObject = { ...profile };
     newObject.isStared = !profile.isStared;
-    console.log("original", profile);
-    console.log("updated", newObject);
-
-    const changedProfile = await updateProfile(newObject);
-    console.log("response", changedProfile);
+    await updateProfile(newObject);
+    trackMode();
   };
+
   return (
     <>
       <div className="main-page-card-buttons">

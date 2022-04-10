@@ -1,17 +1,17 @@
 import {createContext} from "react";
-import { I_Checkbox } from "../types/types";
+import { I_Search } from "../types/types";
 
-interface ActionSearchReducer {
-    name: string;
-    payload: boolean;
-  }
+// interface ActionSearchReducer {
+//     name: string;
+//     payload: boolean;
+//   }
 
 type SearchContent = {
- checkboxInputs: I_Checkbox[] | []
- checkboxDispatch: (action: ActionSearchReducer) => void
+ searchWords: I_Search[] | []
+ setSearchWords: (searchWords: I_Search[]) => void
 }
 
 export const SearchContext = createContext<SearchContent>({
-    checkboxInputs: [],
-    checkboxDispatch: (action: ActionSearchReducer) => {}
+  searchWords: [],
+  setSearchWords: (searchWords: I_Search[]) => {}
 })

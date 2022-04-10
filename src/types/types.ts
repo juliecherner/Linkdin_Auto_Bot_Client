@@ -25,6 +25,12 @@ export interface I_Checkbox {
   searchFor: string;
 }
 
+export interface I_Search{
+  _id?: string;
+  _v?: number;
+  searchWord: string
+}
+
 export interface Action {
   name: string;
   payload: string;

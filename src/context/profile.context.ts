@@ -7,11 +7,13 @@ type ProfileContent = {
     setProfiles:(profiles: I_Profile[]) => void
     mode: string; 
     setMode: (mode: string) => void
+    trackMode: () => void
   }
 
   export const ProfileContext = createContext<ProfileContent>({
   profiles: [],
   setProfiles: () => {},
   mode: "",
-  setMode: () => {}
+  setMode: () => {},
+  trackMode: () => {}
   })
