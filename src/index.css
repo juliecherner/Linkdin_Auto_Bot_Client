@@ -122,6 +122,14 @@
   @apply flex flex-row place-content-between;
 }
 
+.strategy-page-options-new-option {
+  @apply flex flex-row gap-2;
+}
+
+.strategy-page-options-new-option--input {
+  @apply focus:outline-none;
+}
+
 .login-page-unassigned {
   @apply flex flex-col items-center mt-20 gap-2;
 }

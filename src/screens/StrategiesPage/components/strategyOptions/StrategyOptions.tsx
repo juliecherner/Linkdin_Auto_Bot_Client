@@ -16,8 +16,12 @@ const StrategyOptions: React.FC = () => {
     useContext(SearchContext);
 
   const getAllSearchWords = async () => {
-    const allWords = await getSearchWords();
-    setSearchWords(allWords);
+    try {
+      const allWords = await getSearchWords();
+      setSearchWords(allWords);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {
@@ -25,14 +29,24 @@ const StrategyOptions: React.FC = () => {
   }, []);
 
   const deleteById = async (id: string | undefined) => {
-    await deleteSearchWord(id);
-    await getAllSearchWords();
+    try {
+      await deleteSearchWord(id);
+      await getAllSearchWords();
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const addWord = async () => {
-    await addSearchWord(newSearchWord);
-    await getAllSearchWords();
-    setNewSearchWord({ searchWord: "" });
+    if (newSearchWord.searchWord.length > 0) {
+      try {
+        await addSearchWord(newSearchWord);
+        await getAllSearchWords();
+      } catch (error) {
+        console.log(error);
+      }
+      setNewSearchWord({ searchWord: "" });
+    }
   };
 
   const changeNewSearchWord = async (
@@ -61,7 +75,7 @@ const StrategyOptions: React.FC = () => {
           </div>
         </div>
       ))}
-      <div className="flex flex-row gap-1">
+      <div className="strategy-page-options-new-option">
         <div>
           <AddCircleOutlineOutlinedIcon
             color="primary"
@@ -69,6 +83,7 @@ const StrategyOptions: React.FC = () => {
           />
         </div>
         <input
+          className="strategy-page-options-new-option--input"
           value={newSearchWord.searchWord}
           placeholder="Add new search word"
           onChange={(event) => changeNewSearchWord(event)}
