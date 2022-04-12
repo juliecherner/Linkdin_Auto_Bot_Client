@@ -12,7 +12,8 @@ import AddCircleOutlineOutlinedIcon from "@mui/icons-material/AddCircleOutlineOu
 import CheckBoxOutlinedIcon from "@mui/icons-material/CheckBoxOutlined";
 
 const StrategyOptions: React.FC = () => {
-  const { searchWords, setSearchWords } = useContext(SearchContext);
+  const { searchWords, setSearchWords, newSearchWord, setNewSearchWord } =
+    useContext(SearchContext);
 
   const getAllSearchWords = async () => {
     const allWords = await getSearchWords();
@@ -24,19 +25,21 @@ const StrategyOptions: React.FC = () => {
   }, []);
 
   const deleteById = async (id: string | undefined) => {
-    console.log("id", id);
-    //const deletedWord = await deleteSearchWord(id);
-    //getAllSearchWords();
-
-    // console.log("deletedWord", deletedWord);
+    await deleteSearchWord(id);
+    await getAllSearchWords();
   };
-  //   const deleteById = async (id: string) => {
-  //     console.log("id of deleted strategy", id);
-  //   };
 
-  //   const addWord = async () => {
-  //     console.log("added new word");
-  //   };
+  const addWord = async () => {
+    await addSearchWord(newSearchWord);
+    await getAllSearchWords();
+    setNewSearchWord({ searchWord: "" });
+  };
+
+  const changeNewSearchWord = async (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    setNewSearchWord({ searchWord: event.target.value });
+  };
 
   return (
     <div className="flex flex-col gap-2 w-8/12 ">
@@ -63,9 +66,16 @@ const StrategyOptions: React.FC = () => {
       ))}
       <div className="flex flex-row gap-1">
         <div>
-          <AddCircleOutlineOutlinedIcon color="primary" />
+          <AddCircleOutlineOutlinedIcon
+            color="primary"
+            onClick={() => addWord()}
+          />
         </div>
-        <input placeholder="Add new search word" />
+        <input
+          value={newSearchWord.searchWord}
+          placeholder="Add new search word"
+          onChange={(event) => changeNewSearchWord(event)}
+        />
       </div>
     </div>
   );
