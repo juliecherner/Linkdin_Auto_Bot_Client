@@ -31,6 +31,7 @@ export interface I_Search{
   searchWord: string
 }
 
+
 export interface Action {
   name: string;
   payload: string;

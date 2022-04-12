@@ -21,8 +21,15 @@ const StrategyOptions: React.FC = () => {
 
   useEffect(() => {
     getAllSearchWords();
-  }, [searchWords]);
+  }, []);
 
+  const deleteById = async (id: string | undefined) => {
+    console.log("id", id);
+    //const deletedWord = await deleteSearchWord(id);
+    //getAllSearchWords();
+
+    // console.log("deletedWord", deletedWord);
+  };
   //   const deleteById = async (id: string) => {
   //     console.log("id of deleted strategy", id);
   //   };
@@ -39,13 +46,15 @@ const StrategyOptions: React.FC = () => {
           key={searchWord._id}
           className="flex flex-row place-content-between"
         >
-          <CheckBoxOutlinedIcon />
-          {searchWord.searchWord}
+          <div>
+            <CheckBoxOutlinedIcon />
+            {searchWord.searchWord}
+          </div>
           <div>
             <IconButton
               aria-label="delete"
               size="small"
-              onClick={() => console.log(searchWord._id)}
+              onClick={() => deleteById(searchWord._id)}
             >
               <ClearIcon fontSize="inherit" />
             </IconButton>

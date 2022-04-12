@@ -50,7 +50,11 @@
 }
 
 .header {
-  @apply h-12 flex flex-row gap-3 bg-white items-center pr-4 pl-4 relative;
+  @apply h-12 flex flex-row gap-3 justify-between bg-white items-center pr-4 pl-4 relative;
+}
+
+.header-menu {
+  @apply flex flex-row gap-3 items-center;
 }
 
 .header-menu-content {
