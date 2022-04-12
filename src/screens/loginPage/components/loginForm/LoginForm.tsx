@@ -13,7 +13,7 @@ const LoginForm: React.FC = () => {
   };
 
   return (
-    <div className="w-4/5 mx-auto	mt-40 flex flex-col gap-4">
+    <div className="login-page-form">
       <TextField placeholder="e-mail" name="email" onChange={handleChange} />
       <TextField
         placeholder="password"

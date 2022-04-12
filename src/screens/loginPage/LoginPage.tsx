@@ -6,9 +6,9 @@ const LoginPage: React.FC = () => {
   return (
     <div>
       <LoginForm />
-      <div className="flex flex-col items-center mt-20 gap-2">
+      <div className="login-page-unassigned">
         <div>For Unassigned Users</div>
-        <div className="font-semibold underline decoration-solid ">
+        <div className="login-page-unassigned--link">
           <Link to="/about">Contact us</Link>
         </div>
       </div>

@@ -5,7 +5,7 @@ import StrategyOptions from "./components/strategyOptions/StrategyOptions";
 
 const StrategiesPage: React.FC = () => {
   return (
-    <div className="w-11/12 flex flex-col gap-10 pt-16 pl-14">
+    <div className="strategy-page">
       <StrategyOptions />
       <StrategyDescription />
       <StrategyButtons />

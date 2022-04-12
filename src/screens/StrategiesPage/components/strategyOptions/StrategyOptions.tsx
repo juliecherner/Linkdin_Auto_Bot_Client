@@ -42,13 +42,10 @@ const StrategyOptions: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col gap-2 w-8/12 ">
-      <div className="text-2xl">Search by</div>
+    <div className="strategy-page-options">
+      <div className="strategy-page-options-title">Search by</div>
       {searchWords.map((searchWord: I_Search) => (
-        <div
-          key={searchWord._id}
-          className="flex flex-row place-content-between"
-        >
+        <div key={searchWord._id} className="strategy-page-options-option">
           <div>
             <CheckBoxOutlinedIcon />
             {searchWord.searchWord}

@@ -12,11 +12,13 @@ const strategyDescription: I_StrategyDescription[] = [
 
 const StrategyDescription: React.FC = () => {
   return (
-    <div className="flex flex-col gap-10">
+    <div className="strategy-page-description">
       {strategyDescription.map((strategy: I_StrategyDescription) => {
         return (
-          <div className="flex flex-col gap-2" key={strategy.name}>
-            <div className="font-bold">{strategy.name}</div>
+          <div className="strategy-page-description-block" key={strategy.name}>
+            <div className="strategy-page-description-block-title">
+              {strategy.name}
+            </div>
             <div>{strategy.description}</div>
           </div>
         );
