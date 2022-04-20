@@ -1,16 +1,18 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import LoginError from "../loginError/LoginError";
 import { UserContext } from "../../../../context/user.context";
 import { ProfileContext } from "../../../../context/profile.context";
 import { login } from "../../../../api/auth.api";
+import { clearCookies } from "../../../../api/cookies";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
-import { clearCookies } from "../../../../api/cookies";
 
 const LoginForm: React.FC = () => {
   const { setProfiles } = useContext(ProfileContext);
   const { userInputs, userDispatch } = useContext(UserContext);
   const navigate = useNavigate();
+  const [showError, setShowError] = useState(false);
 
   const setUserInfo = (e: React.ChangeEvent<HTMLInputElement>) => {
     const action = { name: e.target.name, payload: e.target.value };
@@ -20,13 +22,28 @@ const LoginForm: React.FC = () => {
   const clearUserInfo = () => {
     userDispatch({ name: "name", payload: "" });
     userDispatch({ name: "password", payload: "" });
+    userDispatch({ name: "logged", payload: "" });
+  };
+
+  const markUserAsLogged = () => {
+    userDispatch({ name: "logged", payload: "logged" });
+  };
+
+  const changeLoginError = (): void => {
+    setShowError(true);
   };
 
   const loginUser = async (): Promise<void> => {
+    if (userInputs.name === "" || userInputs.password === "") return;
+
     const userAndToken = await login(userInputs);
     if (userAndToken) {
+      markUserAsLogged();
       navigate("/");
+    } else {
+      changeLoginError();
     }
+    //how to get peciliar response from server what exactly is wrong?? back!!
   };
 
   const logoutUser = (): void => {
@@ -34,6 +51,10 @@ const LoginForm: React.FC = () => {
     clearUserInfo();
     setProfiles([]); //causes re-render
     navigate("/");
+  };
+
+  const loginOrLogout = (): void => {
+    userInputs.logged === "logged" ? logoutUser() : loginUser();
   };
 
   return (
@@ -50,12 +71,10 @@ const LoginForm: React.FC = () => {
         onChange={setUserInfo}
         value={userInputs.password}
       />
-      <Button variant="contained" color="success" onClick={loginUser}>
-        Log in
+      <Button variant="contained" color="success" onClick={loginOrLogout}>
+        {userInputs.logged === "logged" ? "Logout" : "Login"}
       </Button>
-      <Button variant="outlined" color="success" onClick={logoutUser}>
-        Log out
-      </Button>
+      {showError && <LoginError />}
     </div>
   );
 };

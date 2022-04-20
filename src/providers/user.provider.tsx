@@ -2,17 +2,20 @@ import { useReducer } from "react";
 import { UserContext } from "../context/user.context";
 import { I_User } from "../types/types";
 
-interface Action {
+interface I_UserReducerAction {
   name: string;
   payload: string;
 }
 
 const initialState: I_User = {
+  _id: "",
   name: "",
   password: "",
+  logged: "",
+  //maybe should compare got token and token in cookie - but session cookie means i need to update?
 };
 
-const reducer = (state: I_User = initialState, action: Action) => {
+const reducer = (state: I_User = initialState, action: I_UserReducerAction) => {
   const { name, payload } = action;
   switch (name) {
     case "name":
@@ -24,6 +27,11 @@ const reducer = (state: I_User = initialState, action: Action) => {
       return {
         ...state,
         password: payload,
+      };
+    case "logged":
+      return {
+        ...state,
+        logged: payload,
       };
     default:
       return state;

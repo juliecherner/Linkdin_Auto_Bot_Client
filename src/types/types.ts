@@ -13,9 +13,10 @@ export interface I_Profile {
 }
 
 export interface I_User {
-  _id?: String;
-  name: String;
-  password: String;
+  _id?: string;
+  name: string;
+  password: string;
+  logged: string;
 }
 
 export interface I_Checkbox {

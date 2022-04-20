@@ -10,6 +10,7 @@ export const UserContext = createContext<UserContent>({
   userInputs: {
     password: "",
     name: "",
+    logged: "",
   },
   userDispatch: () => {},
 });

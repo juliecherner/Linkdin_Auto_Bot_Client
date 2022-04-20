@@ -5,8 +5,13 @@
 .main-page {
   @apply bg-[#F5F5F5];
 }
+
 .main-page--togglers {
   @apply h-12 p-4 flex flex-row gap-6 items-center;
+}
+
+.main-page-image-area{
+  @apply h-20 flex flex-col justify-center items-center text-white bg-black text-lg
 }
 
 .main-page--toggler-bold {
@@ -140,6 +145,10 @@
 
 .login-page-form {
   @apply w-4/5 mx-auto mt-40 flex flex-col gap-4;
+}
+
+.login-page-error{
+  @apply text-center
 }
 
 body {
