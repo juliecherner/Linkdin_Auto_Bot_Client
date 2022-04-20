@@ -8,17 +8,17 @@ interface Action {
 }
 
 const initialState: I_User = {
-  email: "",
+  name: "",
   password: "",
 };
 
 const reducer = (state: I_User = initialState, action: Action) => {
   const { name, payload } = action;
   switch (name) {
-    case "email":
+    case "name":
       return {
         ...state,
-        email: payload,
+        name: payload,
       };
     case "password":
       return {

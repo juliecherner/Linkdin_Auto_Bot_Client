@@ -5,17 +5,20 @@ import reportWebVitals from "./reportWebVitals";
 import ProfileProvider from "./providers/profile.provider";
 import UserProvider from "./providers/user.provider";
 import SearchProvider from "./providers/search.provider";
+import TokenProvider from "./providers/token.provider";
 import "./index.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    <UserProvider>
-      <ProfileProvider>
-        <SearchProvider>
-          <App />
-        </SearchProvider>
-      </ProfileProvider>
-    </UserProvider>
+    <TokenProvider>
+      <UserProvider>
+        <ProfileProvider>
+          <SearchProvider>
+            <App />
+          </SearchProvider>
+        </ProfileProvider>
+      </UserProvider>
+    </TokenProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

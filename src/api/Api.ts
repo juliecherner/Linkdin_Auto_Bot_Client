@@ -2,14 +2,13 @@ import axios from "axios";
 
 //let baseUrl = "https://linkedin-autobot-server.herokuapp.com/"
 
-let baseUrl = "http://localhost:8080/"
+let baseUrl = "http://localhost:8080/";
 
 //   process.env.NODE_ENV === "production" ? "/" : "http://localhost:8080/";
 
-export default axios.create({
+const ApiHeader = axios.create({
   baseURL: baseUrl,
+  withCredentials: true,
 });
 
-
-
-         
+export default ApiHeader;
