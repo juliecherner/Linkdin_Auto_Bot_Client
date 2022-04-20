@@ -8,7 +8,6 @@ let baseUrl = "http://localhost:8080/";
 
 const ApiHeader = axios.create({
   baseURL: baseUrl,
-  withCredentials: true,
 });
 
 export default ApiHeader;

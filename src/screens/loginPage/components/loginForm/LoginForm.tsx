@@ -1,33 +1,39 @@
 import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../../../context/user.context";
-import { TokenContext } from "../../../../context/token.context";
+import { ProfileContext } from "../../../../context/profile.context";
 import { login } from "../../../../api/auth.api";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
+import { clearCookies } from "../../../../api/cookies";
 
 const LoginForm: React.FC = () => {
+  const { setProfiles } = useContext(ProfileContext);
   const { userInputs, userDispatch } = useContext(UserContext);
-  const { token, setToken } = useContext(TokenContext);
-  console.log("token!!!!", token);
+  const navigate = useNavigate();
 
   const setUserInfo = (e: React.ChangeEvent<HTMLInputElement>) => {
     const action = { name: e.target.name, payload: e.target.value };
     userDispatch(action);
   };
 
-  const loginUser = async (): Promise<void> => {
-    const userAndToken = await login(userInputs);
-    setToken(userAndToken.token);
-  };
-
-  const logoutUser = async (): Promise<void> => {
-    setToken("");
-    deleteUserInfo();
-  };
-
-  const deleteUserInfo = () => {
+  const clearUserInfo = () => {
     userDispatch({ name: "name", payload: "" });
     userDispatch({ name: "password", payload: "" });
+  };
+
+  const loginUser = async (): Promise<void> => {
+    const userAndToken = await login(userInputs);
+    if (userAndToken) {
+      navigate("/");
+    }
+  };
+
+  const logoutUser = (): void => {
+    clearCookies();
+    clearUserInfo();
+    setProfiles([]); //causes re-render
+    navigate("/");
   };
 
   return (
