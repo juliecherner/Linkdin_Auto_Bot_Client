@@ -2,28 +2,35 @@ import { useReducer } from "react";
 import { UserContext } from "../context/user.context";
 import { I_User } from "../types/types";
 
-interface Action {
+interface I_UserReducerAction {
   name: string;
   payload: string;
 }
 
 const initialState: I_User = {
-  email: "",
+  _id: "",
+  name: "",
   password: "",
+  logged: "",
 };
 
-const reducer = (state: I_User = initialState, action: Action) => {
+const reducer = (state: I_User = initialState, action: I_UserReducerAction) => {
   const { name, payload } = action;
   switch (name) {
-    case "email":
+    case "name":
       return {
         ...state,
-        email: payload,
+        name: payload,
       };
     case "password":
       return {
         ...state,
         password: payload,
+      };
+    case "logged":
+      return {
+        ...state,
+        logged: payload,
       };
     default:
       return state;

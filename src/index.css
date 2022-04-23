@@ -5,8 +5,13 @@
 .main-page {
   @apply bg-[#F5F5F5];
 }
+
 .main-page--togglers {
   @apply h-12 p-4 flex flex-row gap-6 items-center;
+}
+
+.main-page-image-area{
+  @apply h-20 flex flex-col justify-center items-center text-white bg-black text-lg
 }
 
 .main-page--toggler-bold {
@@ -148,18 +153,64 @@
   @apply text-center;
 }
 
+.strategy-page {
+  @apply w-11/12 flex flex-col gap-10 pt-16 pl-14;
+}
+
+.strategy-page-description {
+  @apply flex flex-col gap-10;
+}
+
+.strategy-page-description-block {
+  @apply flex flex-col gap-2;
+}
+
+.strategy-page-description-block-title {
+  @apply font-bold;
+}
+
+.strategy-page-options {
+  @apply flex flex-col gap-2 w-8/12;
+}
+
+.strategy-page-options-title {
+  @apply text-2xl;
+}
+
+.strategy-page-options-option {
+  @apply flex flex-row place-content-between;
+}
+
+.strategy-page-options-new-option {
+  @apply flex flex-row gap-2;
+}
+
+
+.strategy-page-options-new-option--input {
+  @apply focus:outline-none;
+}
+
+.login-page-unassigned {
+  @apply flex flex-col items-center mt-20 gap-2;
+}
+
+.login-page-unassigned--link {
+  @apply font-semibold underline decoration-solid;
+}
+
+.login-page-form {
+  @apply w-4/5 mx-auto mt-40 flex flex-col gap-4;
+}
+
+.login-page-error{
+  @apply text-center
+}
 .about-page-solutions-title {
-  @apply text-center;
-  @apply bg-slate-100;
-  @apply mx-4;
-  @apply my-4;
-}
+  @apply text-center bg-slate-100 m-4}
+
 .about-page-quote {
-  @apply text-center;
-  @apply bg-slate-200;
-  @apply mx-4;
-  @apply my-4;
-}
+  @apply text-center bg-slate-200 m-4}
+ 
 
 body {
   margin: 0;

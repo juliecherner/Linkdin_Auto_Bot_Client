@@ -11,19 +11,16 @@ import "./App.css";
 const App: React.FC = () => {
   return (
     <BrowserRouter>
-          <Header />
+      <Header />
       <Routes>
         <Route path="/" element={<MainPage />}></Route>
         <Route path="login" element={<LoginPage />}></Route>
-        <Route
-          path="scraping-strategies"
-          element={<StrategiesPage/>}
-        ></Route>
+        <Route path="scraping-strategies" element={<StrategiesPage />}></Route>
         <Route path="about" element={<AboutPage />}></Route>
         <Route path="*" element={<NotFoundPage />}></Route>
       </Routes>
     </BrowserRouter>
   );
-}
+};
 
 export default App;

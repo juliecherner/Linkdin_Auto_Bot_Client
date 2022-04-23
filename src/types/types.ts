@@ -13,10 +13,10 @@ export interface I_Profile {
 }
 
 export interface I_User {
-  _id?: String;
-  name?: String;
-  password: String;
-  email: String;
+  _id?: string;
+  name: string;
+  password: string;
+  logged: string;
 }
 
 export interface I_Checkbox {
@@ -30,7 +30,16 @@ export interface I_Search {
   searchWord: string;
 }
 
-export interface Action {
+export interface I_DispatchUserAction {
   name: string;
   payload: string;
 }
+
+export type I_Token = string;
+
+export interface I_AuthHeader {
+  headers: {
+    Authorization: string;
+  };
+}
+
