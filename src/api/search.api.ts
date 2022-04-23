@@ -1,5 +1,5 @@
 import ApiHeader from "./Api";
-import { authHeader } from "../api/auth.api";
+import { authHeader } from "./auth.api";
 import { I_Search } from "../types/types";
 
 export const getSearchWords = async (): Promise<I_Search[]> => {

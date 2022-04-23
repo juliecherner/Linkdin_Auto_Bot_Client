@@ -43,7 +43,7 @@ const LoginForm: React.FC = () => {
     } else {
       changeLoginError();
     }
-    //how to get peciliar response from server what exactly is wrong?? back!!
+    //get peciliar response from server
   };
 
   const logoutUser = (): void => {

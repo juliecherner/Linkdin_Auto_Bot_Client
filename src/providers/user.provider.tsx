@@ -12,7 +12,6 @@ const initialState: I_User = {
   name: "",
   password: "",
   logged: "",
-  //maybe should compare got token and token in cookie - but session cookie means i need to update?
 };
 
 const reducer = (state: I_User = initialState, action: I_UserReducerAction) => {
