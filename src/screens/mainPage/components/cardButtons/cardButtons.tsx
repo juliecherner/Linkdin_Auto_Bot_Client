@@ -1,35 +1,67 @@
-import React, {useState} from 'react'
-import {I_Profile} from "../../../../types/types"
-import StarIcon from '@mui/icons-material/Star';
-import DoneIcon from '@mui/icons-material/Done';
-import CloseIcon from '@mui/icons-material/Close';
-import ChatBubbleOutlineOutlinedIcon from '@mui/icons-material/ChatBubbleOutlineOutlined';
-import MessageOutlinedIcon from '@mui/icons-material/MessageOutlined';
+import React, { useState, useContext } from "react";
+import { ProfileContext } from "../../../../context/profile.context";
+import { updateProfile } from "../../../../api/profile.api";
+import { I_Profile } from "../../../../types/types";
+// import { printHTTPErrors } from "../utils/fetch.utils";
+
+import StarIcon from "@mui/icons-material/Star";
+import DoneIcon from "@mui/icons-material/Done";
+import CloseIcon from "@mui/icons-material/Close";
+// import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
+// import MessageOutlinedIcon from "@mui/icons-material/MessageOutlined";
 
 interface Props {
-    profile: I_Profile
+  profile: I_Profile;
 }
 
-const CardButtons: React.FC <Props> = ({profile})=> {
-const [showComment, setShowComment] = useState(false)
+const CardButtons: React.FC<Props> = ({ profile }) => {
+  // const [showComment, setShowComment] = useState(false);
+
+  const { mode, trackMode } = useContext(ProfileContext);
+
+  //didn't worked
+  //const [changes, setChanges] = useState(false);
+
+  const changeStaredMode = async (profile: I_Profile) => {
+    const newObject = { ...profile };
+    newObject.isStared = !profile.isStared;
+    await updateProfile(newObject);
+    trackMode();
+  };
+
   return (
     <>
       <div className="main-page-card-buttons">
-        <div onClick={()=> setShowComment(!showComment)}>
+        {/* <div onClick={()=> setShowComment(!showComment)}>
           {profile.comment.length > 0 ? <MessageOutlinedIcon/>: <ChatBubbleOutlineOutlinedIcon/>}
-        </div>
+        </div> */}
         <div className="main-page-card-buttons--actions">
-          <DoneIcon color="success"/>
-          <CloseIcon color="error"/>
-          <div>{profile.isStared? <div style={{color:"gold"}}><StarIcon/></div>: <div style={{color:"gray"}}><StarIcon/></div>}</div>
+          <DoneIcon color="success" />
+          <CloseIcon color="error" />
+
+          {profile.isStared ? (
+            <div
+              style={{ color: "gold" }}
+              onClick={() => changeStaredMode(profile)}
+            >
+              <StarIcon />
+            </div>
+          ) : (
+            <div
+              style={{ color: "gray" }}
+              onClick={() => changeStaredMode(profile)}
+            >
+              <StarIcon />
+            </div>
+          )}
         </div>
       </div>
-      <div>
+
+      {/* <div>
         {showComment && <div>{profile.comment.length > 0 ? profile.comment: "No comment"}</div>}
-      </div>
+      </div> */}
     </>
-  )
-}
+  );
+};
 
-export default CardButtons
-
+export default CardButtons;

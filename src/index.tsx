@@ -1,17 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import ProfileProvider from './providers/profile.provider';
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import ProfileProvider from "./providers/profile.provider";
+import UserProvider from "./providers/user.provider";
+import SearchProvider from "./providers/search.provider";
+import "./index.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    <ProfileProvider>
-    <App />
-    </ProfileProvider>
+    <UserProvider>
+      <ProfileProvider>
+        <SearchProvider>
+          <App />
+        </SearchProvider>
+      </ProfileProvider>
+    </UserProvider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function

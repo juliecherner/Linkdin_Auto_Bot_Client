@@ -13,10 +13,10 @@ export const getProfiles = async (
     return data;
   } catch (error: any | AxiosError) {
     printHTTPErrors(error);
+
     throw error;
   }
 }
-
 
 export const updateProfile = async (profileUpdate: I_Profile): Promise<I_Profile[]> => {
   try {
