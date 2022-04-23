@@ -1,6 +1,8 @@
-import ApiHeader from "./Api";
-import { authHeader } from "../api/auth.api";
+import { AxiosError } from "axios";
 import { I_Profile } from "../types/types";
+import { printHTTPErrors } from "../utils/fetch.utils";
+import ApiHeader from "./Api";
+import { authHeader } from "./auth.api";
 
 export const getProfiles = async (
   filter: object = {}, // by field: { isStared: true }
@@ -16,8 +18,9 @@ export const getProfiles = async (
       authHeader()
     );
     return data;
-  } catch (error: any) {
-    console.log(error);
+  } catch (error: any | AxiosError) {
+    printHTTPErrors(error);
+
     throw error;
   }
 };
@@ -33,6 +36,7 @@ export const updateProfile = async (
     );
   } catch (error) {
     console.log(error);
+
     throw error;
   }
 };
