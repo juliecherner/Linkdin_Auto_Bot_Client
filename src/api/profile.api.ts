@@ -14,14 +14,13 @@ export const getProfiles = async (
     return data;
   } catch (error: any | AxiosError) {
     printHTTPErrors(error);
+
     throw error;
   }
 };
 
 
-export const updateProfile = async (
-  profileUpdated: I_Profile
-): Promise<I_Profile[]> => {
+export const updateProfile = async (profileUpdate: I_Profile): Promise<I_Profile[]> => {
   try {
     return await ApiHeader.put("api/profile/profile", profileUpdated);
   } catch (error) {

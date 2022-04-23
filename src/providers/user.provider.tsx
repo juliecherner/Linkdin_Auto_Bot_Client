@@ -9,7 +9,7 @@ interface Action {
 
 const initialState: I_User = {
   name: "",
-  password: "",
+  password: ""
 };
 
 const reducer = (state: I_User = initialState, action: Action) => {

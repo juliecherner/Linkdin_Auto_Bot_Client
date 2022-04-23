@@ -1,14 +1,11 @@
 import React, { useContext } from "react";
 import { UserContext } from "../../../../context/user.context";
-import { TokenContext } from "../../../../context/token.context";
 import { login } from "../../../../api/auth.api";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 
 const LoginForm: React.FC = () => {
   const { userInputs, userDispatch } = useContext(UserContext);
-  const { token, setToken } = useContext(TokenContext);
-  console.log("token!!!!", token);
 
   const setUserInfo = (e: React.ChangeEvent<HTMLInputElement>) => {
     const action = { name: e.target.name, payload: e.target.value };

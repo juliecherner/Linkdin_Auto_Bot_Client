@@ -9,7 +9,7 @@ type UserContent = {
 export const UserContext = createContext<UserContent>({
   userInputs: {
     password: "",
-    name: "",
+    name: ""
   },
   userDispatch: () => {},
 });
