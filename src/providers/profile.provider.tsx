@@ -10,11 +10,11 @@ const ProfileProvider: React.FC = ({ children }) => {
   const trackMode = async () => {
     switch (mode) {
       case "Relevant":
-        const relevant = await getProfiles();
+        const relevant = await getProfiles({}, {});
         setProfiles(relevant);
         break;
       case "Latest":
-        const latest = await getProfiles({}, { createdAt: -1 });
+        const latest = await getProfiles({}, { field: "createdAt", order: -1 });
         setProfiles(latest);
         break;
       case "Stared":
@@ -22,7 +22,7 @@ const ProfileProvider: React.FC = ({ children }) => {
         setProfiles(stared);
         break;
       default:
-        const defaultData = await getProfiles();
+        const defaultData = await getProfiles({}, {});
         setProfiles(defaultData);
     }
   };

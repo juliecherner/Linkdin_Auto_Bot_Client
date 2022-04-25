@@ -4,7 +4,7 @@ import LoginForm from "./components/loginForm/LoginForm";
 
 const LoginPage: React.FC = () => {
   return (
-    <div>
+    <div className="login-page">
       <LoginForm />
       <div className="login-page-unassigned">
         <div>For Unassigned Users</div>

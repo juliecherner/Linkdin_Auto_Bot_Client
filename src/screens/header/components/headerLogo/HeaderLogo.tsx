@@ -4,7 +4,7 @@ import logo from "../../../../assets/images/logo.png";
 
 const HeaderLogo: React.FC = () => {
   return (
-    <div>
+    <div className="header-logo">
       <Link to="/">
         <img
           className="header-header-logo-image"

@@ -10,7 +10,7 @@
 }
 
 .main-page {
-  @apply bg-gray;
+  @apply bg-gray h-[calc(h-screen-4rem)];
 }
 
 .main-page--togglers {
@@ -66,12 +66,16 @@
   @apply h-16 flex flex-row gap-3 justify-between bg-white items-center pr-4 pl-4 relative;
 }
 
+.header-logo{
+  @apply small-mobile:hidden;
+}
+
 .header-menu {
   @apply flex flex-row gap-3 items-center;
 }
 
 .header-menu-content {
-  @apply bg-white absolute w-3/4 h-screen p-8 top-0 left-0 z-10;
+  @apply bg-white absolute w-3/4 h-screen p-8 top-0 left-0 z-10 small-mobile:w-full middle-mobile:w-full;
 }
 
 .header-menu-content-title {
@@ -108,7 +112,7 @@
 }
 
 .strategy-page {
-  @apply w-11/12 flex flex-col gap-10 pt-16 pl-14 text-left;
+  @apply w-11/12 flex flex-col gap-10 pt-16 pl-14 text-left h-[calc(h-screen-4rem)];
 }
 
 .strategy-page-description {
@@ -142,13 +146,15 @@
 .strategy-page-options-new-option--input {
   @apply focus:outline-none;
 }
-
+.login-page{
+  @apply h-[calc(h-screen-4rem)];
+}
 .login-page-unassigned {
   @apply flex flex-col items-center mt-20 gap-2;
 }
 
 .login-page-unassigned--link {
-  @apply font-semibold underline decoration-solid;
+  @apply font-semibold underline decoration-solid mb-6;
 }
 
 .login-page-form {
@@ -157,7 +163,7 @@
 
 
 .strategy-page {
-  @apply w-11/12 flex flex-col gap-10 pt-16 pl-14;
+  @apply w-11/12 flex flex-col gap-10 pt-16 pl-14 h-[calc(h-screen-4rem)];
 }
 
 .strategy-page-description {
@@ -206,7 +212,7 @@
 }
 
 .about-page {
-  @apply flex flex-col gap-4 bg-gray h-screen;
+  @apply flex flex-col gap-4 h-[calc(h-screen-4rem)];
 }
 
 .about-page-name {

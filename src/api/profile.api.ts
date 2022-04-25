@@ -2,10 +2,11 @@ import { AxiosError } from "axios";
 import { I_Profile } from "../types/types";
 import ApiHeader from "./Api";
 import { authHeader } from "./auth.api";
+import { I_ProfileSorting, I_ProfileFiltering } from "../types/types";
 
 export const getProfiles = async (
-  filter: object = {}, // by field: { isStared: true }
-  sortBy: object = {} // by field: { createdAt: -1 } (1 = ascending, -1 = descending)
+  filter: I_ProfileFiltering | {}, // by field: { isStared: true }
+  sortBy: I_ProfileSorting | {} // by field: { createdAt: -1 } (1 = ascending, -1 = descending)
 ): Promise<I_Profile[]> => {
   try {
     const { data } = await ApiHeader.post(

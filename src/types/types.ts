@@ -12,6 +12,15 @@ export interface I_Profile {
   updatedAt: Date;
 }
 
+export interface I_ProfileSorting {
+  field: string;
+  order: 1 | -1;
+}
+
+export interface I_ProfileFiltering {
+  isStared: boolean;
+}
+
 export interface I_User {
   _id?: string;
   name: string;
@@ -42,4 +51,3 @@ export interface I_AuthHeader {
     Authorization: string;
   };
 }
-
