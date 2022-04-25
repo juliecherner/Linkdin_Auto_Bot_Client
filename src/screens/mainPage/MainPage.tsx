@@ -3,9 +3,11 @@ import CardList from "./components/cardList/CardList";
 import Togglers from "./components/togglers/Togglers";
 import ImageArea from "./components/imageArea/imageArea";
 import { ProfileContext } from "../../context/profile.context";
+import { UserContext } from "../../context/user.context";
 
 const MainPage: React.FC = () => {
   const { mode, trackMode } = useContext(ProfileContext);
+  const { userInputs } = useContext(UserContext);
 
   useEffect(() => {
     trackMode();
@@ -13,7 +15,7 @@ const MainPage: React.FC = () => {
 
   return (
     <div className="main-page">
-      <Togglers />
+      {userInputs.logged && <Togglers />}
       <ImageArea />
       <CardList />
     </div>

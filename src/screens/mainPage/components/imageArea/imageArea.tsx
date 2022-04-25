@@ -1,16 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import image from "../../../../assets/images/linkedin-crawler-image.jpeg";
+import { UserContext } from "../../../../context/user.context";
 
-export default function imageArea() {
+export default function ImageArea() {
+  const { userInputs } = useContext(UserContext);
   return (
     <div>
       <div className="main-page-image-area">
         <div>Velocity Venture</div>
-        <div>
-          First check collaborative fund, specializing in pre-seed startups.
-        </div>
       </div>
-      <img src={image} alt="Velocity LinkedIn Crawler" />
+      {userInputs.logged !== "logged" && (
+        <img src={image} alt="Velocity LinkedIn Crawler" />
+      )}
     </div>
   );
 }
