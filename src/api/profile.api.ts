@@ -1,6 +1,5 @@
 import { AxiosError } from "axios";
 import { I_Profile } from "../types/types";
-import { printHTTPErrors } from "../utils/fetch.utils";
 import ApiHeader from "./Api";
 import { authHeader } from "./auth.api";
 
@@ -19,8 +18,6 @@ export const getProfiles = async (
     );
     return data;
   } catch (error: any | AxiosError) {
-    printHTTPErrors(error);
-
     throw error;
   }
 };

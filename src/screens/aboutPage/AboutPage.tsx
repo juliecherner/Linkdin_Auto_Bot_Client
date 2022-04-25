@@ -1,29 +1,47 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../../assets/images/linkedin-crawler-image.jpeg";
-//
+import logo from "../../assets/images/logo.svg";
+import Button from "@mui/material/Button";
+
+const solutions = [
+  "Search in Israel",
+  "Search by people",
+  "Searchwords by choice",
+  "Sorting, deleting, staring results",
+];
+
 const AboutPage: React.FC = () => {
-  const solutions = [
-    "web scraping",
-    "full stack website design",
-    "front end",
-    "back end",
-    "and more",
-  ];
-
   return (
-    <div className="about-page ">
-      <img className="" src={logo} alt="Velocity Autobot" />
-
-      <div className="about-page-quote">
-        <q>we specialize in costumized solutions for the business market</q>
+    <div className="about-page">
+      <img src={logo} alt="Velocity Ventures" />
+      <div className="about-page-name">LinkedIn Auto Bot</div>
+      <div className="about-page-solutions-title">Functionality</div>
+      <div className="about-page-solutions">
+        {solutions.map((solution) => (
+          <div key={solution} className="about-page-solution">
+            {solution}
+          </div>
+        ))}
       </div>
-      <div className="about-page-solutions-title">we offer solutions in:</div>
-      {solutions.map((solution) => (
-        <div key={solution} className="login-page-solution">
-          {solution}
-        </div>
-      ))}
+      <div className="about-page--links">
+        <Link to="/scraping-strategies">
+          <Button fullWidth variant="contained" color="success">
+            Set scrapping strategy
+          </Button>
+        </Link>
+        <Link to="/">
+          <Button fullWidth variant="contained" color="info">
+            Get results
+          </Button>
+        </Link>
+      </div>
+      <a
+        href="https://www.linkedin.com/company/velocityventures/"
+        rel="noreferrer"
+        target="_blank"
+      >
+        <div className="about-page--contact">Contact us</div>
+      </a>
     </div>
   );
 };

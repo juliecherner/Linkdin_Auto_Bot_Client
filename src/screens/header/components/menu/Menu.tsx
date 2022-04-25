@@ -1,5 +1,4 @@
-import React, { useState, useContext } from "react";
-import { UserContext } from "../../../../context/user.context";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import LoginButton from "../loginButton/LoginButton";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -17,18 +16,11 @@ const constants: routeObject[] = [
 ];
 
 const MenuElement: React.FC = () => {
-  const { userInputs } = useContext(UserContext);
   const [openedMenu, setOpenedMenu] = useState(false);
-
-  const isMenuShown = (): void => {
-    if (userInputs.logged === "logged") {
-      setOpenedMenu(true);
-    }
-  };
 
   return (
     <>
-      <MenuIcon onClick={isMenuShown} />
+      <MenuIcon onClick={() => setOpenedMenu(true)} />
       {openedMenu && (
         <div className="header-menu-content">
           <div className="header-menu-content-title">
