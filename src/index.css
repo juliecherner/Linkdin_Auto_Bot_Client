@@ -2,14 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+/* including preflight */
 @layer base {
-  span {
-    @apply text-center;
+  body {
+    @apply text-center m-0;
   }
 }
 
 .main-page {
-  @apply bg-white;
+  @apply bg-gray;
 }
 
 .main-page--togglers {
@@ -42,8 +43,9 @@
   @apply col-span-2;
 }
 .main-page-card-position {
-  @apply font-bold text-lg;
+  @apply font-bold text-left text-lg;
 }
+
 .main-page-card-position-info {
   @apply grid grid-cols-3 text-[10px] pb-2;
 }
@@ -69,7 +71,7 @@
 }
 
 .header-menu-content {
-  @apply bg-white absolute w-3/4 h-screen p-8 top-0 left-0 z-10 text-center;
+  @apply bg-white absolute w-3/4 h-screen p-8 top-0 left-0 z-10;
 }
 
 .header-menu-content-title {
@@ -106,7 +108,7 @@
 }
 
 .strategy-page {
-  @apply w-11/12 flex flex-col gap-10 pt-16 pl-14;
+  @apply w-11/12 flex flex-col gap-10 pt-16 pl-14 text-left;
 }
 
 .strategy-page-description {
@@ -203,12 +205,8 @@
   @apply w-4/5 mx-auto mt-40 flex flex-col gap-4;
 }
 
-.login-page-error{
-  @apply text-center
-}
-
 .about-page {
-  @apply flex flex-col gap-4 bg-gray h-screen text-center;
+  @apply flex flex-col gap-4 bg-gray h-screen;
 }
 
 .about-page-name {
@@ -231,20 +229,4 @@
 
 .about-page--contact{
   @apply font-bold;
-}
- 
-  
-
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
 }
