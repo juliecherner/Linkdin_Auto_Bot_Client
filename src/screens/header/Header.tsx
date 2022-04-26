@@ -1,6 +1,7 @@
 import LoginButton from "./components/loginButton/LoginButton";
 import HeaderLogo from "./components/headerLogo/HeaderLogo";
 import Menu from "./components/menu/Menu";
+import "./header.css";
 
 const Header: React.FC = () => {
   return (

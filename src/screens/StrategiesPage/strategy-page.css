@@ -1,0 +1,35 @@
+.strategy-page {
+    @apply w-11/12 flex flex-col gap-10 pt-16 pl-14 text-left h-[calc(h-screen-4rem)];
+  }
+  
+  .strategy-page-description {
+    @apply flex flex-col gap-10;
+  }
+  
+  .strategy-page-description-block {
+    @apply flex flex-col gap-2;
+  }
+  
+  .strategy-page-description-block-title {
+    @apply font-bold;
+  }
+  
+  .strategy-page-options {
+    @apply flex flex-col gap-2 w-8/12;
+  }
+  
+  .strategy-page-options-title {
+    @apply text-2xl;
+  }
+  
+  .strategy-page-options-option {
+    @apply flex flex-row place-content-between;
+  }
+  
+  .strategy-page-options-new-option {
+    @apply flex flex-row gap-2;
+  }
+  
+  .strategy-page-options-new-option--input {
+    @apply focus:outline-none;
+  }

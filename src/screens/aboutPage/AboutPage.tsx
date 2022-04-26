@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/images/logo.svg";
 import Button from "@mui/material/Button";
+import "./about-page.css";
 
 const solutions = [
   "Search in Israel",

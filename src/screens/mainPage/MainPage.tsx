@@ -4,7 +4,7 @@ import Togglers from "./components/togglers/Togglers";
 import ImageArea from "./components/imageArea/imageArea";
 import { ProfileContext } from "../../context/profile.context";
 import { UserContext } from "../../context/user.context";
-
+import "./main-page.css";
 const MainPage: React.FC = () => {
   const { mode, trackMode } = useContext(ProfileContext);
   const { userInputs } = useContext(UserContext);

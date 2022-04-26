@@ -9,7 +9,7 @@ export default function ImageArea() {
       <div className="main-page-image-area">
         <div>Velocity Venture</div>
       </div>
-      {userInputs.logged !== "logged" && (
+      {!userInputs.logged && (
         <img src={image} alt="Velocity LinkedIn Crawler" />
       )}
     </div>
