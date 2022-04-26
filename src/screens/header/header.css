@@ -13,7 +13,7 @@
   }
   
   .header-menu-content {
-    @apply bg-white absolute w-3/4 h-screen p-8 top-0 left-0 z-10 small-mobile:w-full middle-mobile:w-full;
+    @apply bg-white absolute w-full h-screen p-8 top-0 left-0 z-10 large-mobile:w-3/4 tablet:w-1/2 laptop:w-1/2 desktop:w-1/2;
   }
   
   .header-menu-content-title {

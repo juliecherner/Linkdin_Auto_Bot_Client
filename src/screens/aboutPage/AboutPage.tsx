@@ -14,7 +14,7 @@ const solutions = [
 const AboutPage: React.FC = () => {
   return (
     <div className="about-page">
-      <img src={logo} alt="Velocity Ventures" />
+      <img className="about-page-logo" src={logo} alt="Velocity Ventures" />
       <div className="about-page-name">LinkedIn Auto Bot</div>
       <div className="about-page-solutions-title">Functionality</div>
       <div className="about-page-solutions">

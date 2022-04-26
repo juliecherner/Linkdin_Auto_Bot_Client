@@ -10,7 +10,7 @@
   }
   
   .login-page-form {
-    @apply w-4/5 mx-auto mt-40 flex flex-col gap-4;
+    @apply w-4/5 mx-auto mt-40 flex flex-col gap-4 large-mobile:w-3/5 tablet:w-2/5 laptop:w-2/5 desktop:w-1/5;
   }
 
   .login-page-unassigned {

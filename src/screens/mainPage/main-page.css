@@ -6,8 +6,16 @@
     @apply h-12 p-4 flex flex-row gap-6 items-center;
   }
   
-  .main-page-image-area{
+  .main-page-image-area-title{
     @apply h-20 flex flex-col justify-center items-center text-white bg-black text-lg font-bold;
+  }
+
+  .main-page-image-area-background{
+    @apply h-screen bg-mainPage bg-center bg-cover bg-no-repeat flex justify-center pt-40 tablet:pt-60;
+  }
+
+  .main-page-image-area--login{
+    @apply text-white text-3xl border-2 border-white rounded-lg px-6 py-2;
   }
   
   .main-page--toggler-bold {

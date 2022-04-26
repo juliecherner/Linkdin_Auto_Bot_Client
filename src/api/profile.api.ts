@@ -39,7 +39,7 @@ export const updateProfile = async (
   }
 };
 
-export const deleteItem = async (profileId: string): Promise<Profile[]> => {
+export const deleteProfile = async (profileId: string): Promise<Profile[]> => {
   try {
     return await ApiHeader.delete(
       `api/profile/profile/${profileId}`,

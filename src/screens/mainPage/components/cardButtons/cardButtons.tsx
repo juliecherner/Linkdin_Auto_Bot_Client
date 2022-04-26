@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { ProfileContext } from "../../../../context/profile.context";
-import { updateProfile } from "../../../../api/profile.api";
+import { updateProfile, deleteProfile } from "../../../../api/profile.api";
 import { Profile } from "../../../../types/types";
 import StarIcon from "@mui/icons-material/Star";
 import DoneIcon from "@mui/icons-material/Done";
@@ -20,12 +20,19 @@ const CardButtons: React.FC<Props> = ({ profile }) => {
     trackMode();
   };
 
+  const hideProfile = async (profile: Profile) => {
+    console.log("try to delete", profile._id);
+    //fix it
+    await deleteProfile(profile._id);
+    trackMode();
+  };
+
   return (
     <>
       <div className="main-page-card-buttons">
         <div className="main-page-card-buttons--actions">
-          <DoneIcon color="success" />
-          <CloseIcon color="error" />
+          {/* <DoneIcon color="success" /> */}
+          <CloseIcon color="error" onClick={() => hideProfile(profile)} />
           {profile.isStared ? (
             <div
               style={{ color: "gold" }}
