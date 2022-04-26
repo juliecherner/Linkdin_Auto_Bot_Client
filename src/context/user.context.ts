@@ -1,9 +1,9 @@
 import { createContext } from "react";
-import { I_User, I_DispatchUserAction } from "../types/types";
+import { User, DispatchUserAction } from "../types/types";
 
 type UserContent = {
-  userInputs: I_User;
-  userDispatch: (action: I_DispatchUserAction) => void;
+  userInputs: User;
+  userDispatch: (action: DispatchUserAction) => void;
 };
 
 export const UserContext = createContext<UserContent>({

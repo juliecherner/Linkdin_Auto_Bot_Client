@@ -1,10 +1,10 @@
-import { I_Token } from "../types/types";
+import { Token } from "../types/types";
 
-export const setCookies = (token: I_Token): void => {
+export const setCookies = (token: Token): void => {
   document.cookie = "token=" + token;
 };
 
-export const getTokenFromCookies = (): I_Token => {
+export const getTokenFromCookies = (): Token => {
   return document.cookie.slice(6);
 };
 

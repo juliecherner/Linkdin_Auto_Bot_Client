@@ -1,11 +1,11 @@
 import React from "react";
 
-interface I_StrategyDescription {
+interface StrategyDescriptionInterface {
   name: string;
   description: string;
 }
 
-const strategyDescription: I_StrategyDescription[] = [
+const strategyDescription: StrategyDescriptionInterface[] = [
   { name: "Search frequency", description: "1 time per 2 weeks" },
   { name: "Country", description: "Israel" },
 ];
@@ -13,7 +13,7 @@ const strategyDescription: I_StrategyDescription[] = [
 const StrategyDescription: React.FC = () => {
   return (
     <div className="strategy-page-description">
-      {strategyDescription.map((strategy: I_StrategyDescription) => {
+      {strategyDescription.map((strategy: StrategyDescriptionInterface) => {
         return (
           <div className="strategy-page-description-block" key={strategy.name}>
             <div className="strategy-page-description-block-title">

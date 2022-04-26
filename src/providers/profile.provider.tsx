@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { ProfileContext } from "../context/profile.context";
-import { I_Profile } from "../types/types";
+import { Profile } from "../types/types";
 import { getProfiles } from "../api/profile.api";
 
 const ProfileProvider: React.FC = ({ children }) => {
   const [mode, setMode] = useState<string>("Relevant");
-  const [profiles, setProfiles] = useState<I_Profile[]>([]);
+  const [profiles, setProfiles] = useState<Profile[]>([]);
 
   const trackMode = async () => {
     switch (mode) {

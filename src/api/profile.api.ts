@@ -1,13 +1,13 @@
 import { AxiosError } from "axios";
-import { I_Profile } from "../types/types";
+import { Profile } from "../types/types";
 import ApiHeader from "./Api";
 import { authHeader } from "./auth.api";
-import { I_ProfileSorting, I_ProfileFiltering } from "../types/types";
+import { ProfileSorting, ProfileFiltering } from "../types/types";
 
 export const getProfiles = async (
-  filter: I_ProfileFiltering | {}, // by field: { isStared: true }
-  sortBy: I_ProfileSorting | {} // by field: { createdAt: -1 } (1 = ascending, -1 = descending)
-): Promise<I_Profile[]> => {
+  filter: ProfileFiltering | {}, // by field: { isStared: true }
+  sortBy: ProfileSorting | {} // by field: { createdAt: -1 } (1 = ascending, -1 = descending)
+): Promise<Profile[]> => {
   try {
     const { data } = await ApiHeader.post(
       "api/profile/profiles",
@@ -24,8 +24,8 @@ export const getProfiles = async (
 };
 
 export const updateProfile = async (
-  profileUpdated: I_Profile
-): Promise<I_Profile[]> => {
+  profileUpdated: Profile
+): Promise<Profile[]> => {
   try {
     return await ApiHeader.put(
       "api/profile/profile",
@@ -39,7 +39,7 @@ export const updateProfile = async (
   }
 };
 
-export const deleteItem = async (profileId: string): Promise<I_Profile[]> => {
+export const deleteItem = async (profileId: string): Promise<Profile[]> => {
   try {
     return await ApiHeader.delete(
       `api/profile/profile/${profileId}`,

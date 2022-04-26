@@ -54,7 +54,7 @@ const LoginForm: React.FC = () => {
   };
 
   const loginOrLogout = (): void => {
-    userInputs.logged === "logged" ? logoutUser() : loginUser();
+    userInputs.logged ? logoutUser() : loginUser();
   };
 
   return (

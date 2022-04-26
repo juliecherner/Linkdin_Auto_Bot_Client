@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import { I_Search } from "../../../../types/types";
+import { Search } from "../../../../types/types";
 import { SearchContext } from "../../../../context/search.context";
 import {
   getSearchWords,
@@ -58,7 +58,7 @@ const StrategyOptions: React.FC = () => {
   return (
     <div className="strategy-page-options">
       <div className="strategy-page-options-title">Search by</div>
-      {searchWords.map((searchWord: I_Search) => (
+      {searchWords.map((searchWord: Search) => (
         <div key={searchWord._id} className="strategy-page-options-option">
           <div>
             <CheckBoxOutlinedIcon />
