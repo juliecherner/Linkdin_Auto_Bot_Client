@@ -1,8 +1,8 @@
-import { I_User, I_Token, I_AuthHeader } from "../types/types";
+import { User, Token, AuthHeader } from "../types/types";
 import ApiHeader from "./Api";
 import { setCookies, getTokenFromCookies } from "./cookies";
 
-export const authHeader = (): I_AuthHeader => {
+export const authHeader = (): AuthHeader => {
   const token = getTokenFromCookies();
   return {
     headers: {
@@ -11,10 +11,10 @@ export const authHeader = (): I_AuthHeader => {
   };
 };
 
-export const login = async (user: I_User) => {
+export const login = async (user: User) => {
   try {
     const { data } = await ApiHeader.post("api/user/login", user);
-    const token: I_Token = data.token;
+    const token: Token = data.token;
     setCookies(token);
     return data;
   } catch (error) {

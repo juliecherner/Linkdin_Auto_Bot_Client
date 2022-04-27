@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/images/logo.svg";
 import Button from "@mui/material/Button";
+import "./about-page.css";
 
 const solutions = [
   "Search in Israel",
@@ -13,7 +14,7 @@ const solutions = [
 const AboutPage: React.FC = () => {
   return (
     <div className="about-page">
-      <img src={logo} alt="Velocity Ventures" />
+      <img className="about-page-logo" src={logo} alt="Velocity Ventures" />
       <div className="about-page-name">LinkedIn Auto Bot</div>
       <div className="about-page-solutions-title">Functionality</div>
       <div className="about-page-solutions">

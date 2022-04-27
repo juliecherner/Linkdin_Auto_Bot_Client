@@ -1,0 +1,60 @@
+.main-page {
+    @apply bg-gray h-screen;
+  }
+  
+  .main-page--togglers {
+    @apply h-12 p-4 flex flex-row gap-6 items-center;
+  }
+  
+  .main-page-image-area-title{
+    @apply h-20 flex flex-col justify-center items-center text-white bg-black text-lg font-bold;
+  }
+
+  .main-page-image-area-background{
+    @apply h-screen bg-mainPage bg-center bg-cover bg-no-repeat flex justify-center pt-40 tablet:pt-60;
+  }
+
+  .main-page-image-area--login{
+    @apply text-white text-3xl border-2 border-white rounded-lg px-6 py-2;
+  }
+  
+  .main-page--toggler-bold {
+    @apply font-bold;
+  }
+  .main-page-card-list {
+    @apply flex flex-col gap-2 p-2;
+  }
+  
+  .main-page-card {
+    @apply h-1/5 text-xs p-4 bg-white;
+  }
+  
+  .main-page-card-general {
+    @apply flex flex-row gap-x-2 h-12 items-center;
+  }
+  .main-page-card-general-image {
+    @apply font-medium text-sm;
+  }
+  
+  .main-page-card-general-info {
+    @apply col-span-2;
+  }
+  .main-page-card-position {
+    @apply font-bold text-left text-lg;
+  }
+  
+  .main-page-card-position-info {
+    @apply grid grid-cols-3 text-[10px] pb-2;
+  }
+  
+  .main-page-card-position-info-tags {
+    @apply col-span-2 flex flex-row gap-4;
+  }
+  
+  .main-page-card-buttons {
+    @apply flex flex-row justify-between;
+  }
+  
+  .main-page-card-buttons--actions {
+    @apply flex flex-row justify-end col-span-10 gap-3;
+  }

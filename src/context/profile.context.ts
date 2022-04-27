@@ -1,19 +1,18 @@
-import {createContext} from "react";
-import {I_Profile} from "../types/types"
-
+import { createContext } from "react";
+import { Profile } from "../types/types";
 
 type ProfileContent = {
-    profiles: I_Profile[];
-    setProfiles:(profiles: I_Profile[]) => void
-    mode: string; 
-    setMode: (mode: string) => void
-    trackMode: () => void
-  }
+  profiles: Profile[];
+  setProfiles: (profiles: Profile[]) => void;
+  mode: string;
+  setMode: (mode: string) => void;
+  trackMode: () => void;
+};
 
-  export const ProfileContext = createContext<ProfileContent>({
+export const ProfileContext = createContext<ProfileContent>({
   profiles: [],
   setProfiles: () => {},
   mode: "",
   setMode: () => {},
-  trackMode: () => {}
-  })
+  trackMode: () => {},
+});

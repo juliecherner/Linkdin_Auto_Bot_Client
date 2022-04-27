@@ -1,0 +1,30 @@
+.about-page {
+    @apply flex flex-col gap-4 h-[calc(h-screen-4rem)];
+  }
+
+  .about-page-logo{
+    @apply h-40;
+  }
+
+  .about-page-name {
+    @apply m-4;
+  }
+  .about-page-solutions-title {
+    @apply font-bold}
+  
+  .about-page-solutions {
+    @apply flex flex-col gap-3 mb-6;
+  } 
+    
+  .about-page-solution{
+    @apply hover:font-bold;
+  }
+  
+  .about-page--links{
+    @apply flex flex-col w-2/3 mx-auto gap-4 mb-6 large-mobile:w-3/5 tablet:w-2/5 laptop:w-1/5 desktop:w-1/5;
+  }
+  
+  .about-page--contact{
+    @apply font-bold;
+  }
+  

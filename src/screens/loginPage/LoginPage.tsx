@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import LoginForm from "./components/loginForm/LoginForm";
+import "./login-page.css";
 
 const LoginPage: React.FC = () => {
   return (

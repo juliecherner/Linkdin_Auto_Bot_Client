@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import Card from "../card/Card";
-import { I_Profile } from "../../../../types/types";
+import { Profile } from "../../../../types/types";
 import { ProfileContext } from "../../../../context/profile.context";
 
 const CardList: React.FC = () => {
@@ -8,7 +8,7 @@ const CardList: React.FC = () => {
 
   return (
     <div className="main-page-card-list">
-      {profiles.map((profile: I_Profile) => (
+      {profiles.map((profile: Profile) => (
         <Card key={profile._id} profile={profile} />
       ))}
     </div>

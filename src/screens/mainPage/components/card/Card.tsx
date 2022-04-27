@@ -1,8 +1,8 @@
 import CardButtons from "../cardButtons/cardButtons";
-import { I_Profile } from "../../../../types/types";
+import { Profile } from "../../../../types/types";
 
 interface Props {
-  profile: I_Profile;
+  profile: Profile;
 }
 
 const Card: React.FC<Props> = ({ profile }) => {

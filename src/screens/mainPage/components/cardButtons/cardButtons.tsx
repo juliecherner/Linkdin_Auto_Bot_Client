@@ -1,44 +1,38 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { ProfileContext } from "../../../../context/profile.context";
-import { updateProfile } from "../../../../api/profile.api";
-import { I_Profile } from "../../../../types/types";
-// import { printHTTPErrors } from "../utils/fetch.utils";
-
+import { updateProfile, deleteProfile } from "../../../../api/profile.api";
+import { Profile } from "../../../../types/types";
 import StarIcon from "@mui/icons-material/Star";
 import DoneIcon from "@mui/icons-material/Done";
 import CloseIcon from "@mui/icons-material/Close";
-// import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
-// import MessageOutlinedIcon from "@mui/icons-material/MessageOutlined";
 
 interface Props {
-  profile: I_Profile;
+  profile: Profile;
 }
 
 const CardButtons: React.FC<Props> = ({ profile }) => {
-  // const [showComment, setShowComment] = useState(false);
+  const { trackMode } = useContext(ProfileContext);
 
-  const { mode, trackMode } = useContext(ProfileContext);
-
-  //didn't worked
-  //const [changes, setChanges] = useState(false);
-
-  const changeStaredMode = async (profile: I_Profile) => {
+  const changeStaredMode = async (profile: Profile) => {
     const newObject = { ...profile };
     newObject.isStared = !profile.isStared;
     await updateProfile(newObject);
     trackMode();
   };
 
+  const hideProfile = async (profile: Profile) => {
+    console.log("try to delete", profile._id);
+    //fix it
+    await deleteProfile(profile._id);
+    trackMode();
+  };
+
   return (
     <>
       <div className="main-page-card-buttons">
-        {/* <div onClick={()=> setShowComment(!showComment)}>
-          {profile.comment.length > 0 ? <MessageOutlinedIcon/>: <ChatBubbleOutlineOutlinedIcon/>}
-        </div> */}
         <div className="main-page-card-buttons--actions">
-          <DoneIcon color="success" />
-          <CloseIcon color="error" />
-
+          {/* <DoneIcon color="success" /> */}
+          <CloseIcon color="error" onClick={() => hideProfile(profile)} />
           {profile.isStared ? (
             <div
               style={{ color: "gold" }}
@@ -56,10 +50,6 @@ const CardButtons: React.FC<Props> = ({ profile }) => {
           )}
         </div>
       </div>
-
-      {/* <div>
-        {showComment && <div>{profile.comment.length > 0 ? profile.comment: "No comment"}</div>}
-      </div> */}
     </>
   );
 };

@@ -7,7 +7,7 @@ const LoginButton: React.FC = () => {
   return (
     <div className="header--login-button">
       <Link to="/login">
-        {userInputs.logged === "logged" ? `${userInputs.name}` : "Login"}
+        {userInputs.logged ? `${userInputs.name}` : "Login"}
       </Link>
     </div>
   );

@@ -1,0 +1,50 @@
+
+
+.header {
+    @apply h-16 flex flex-row gap-3 justify-between bg-white items-center pr-4 pl-4 relative;
+  }
+  
+  .header-logo{
+    @apply small-mobile:hidden;
+  }
+  
+  .header-menu {
+    @apply flex flex-row gap-3 items-center;
+  }
+  
+  .header-menu-content {
+    @apply bg-white absolute w-full h-screen p-8 top-0 left-0 z-10 large-mobile:w-3/4 tablet:w-1/2 laptop:w-1/2 desktop:w-1/2;
+  }
+  
+  .header-menu-content-title {
+    @apply flex flex-row justify-between;
+  }
+  
+  .header-menu-content-elements {
+    @apply grid grid-rows-3 divide-y pt-3;
+  }
+  
+  .header-menu-content-element {
+    @apply py-3 font-bold;
+  }
+  
+  .header-menu-content-button {
+    @apply pt-8;
+  }
+  
+  .header-header-logo-image {
+    @apply h-8 rounded-md;
+    @layer object-fil;
+  }
+  
+  .header-header-input {
+    @apply flex flex-row gap-2 h-8 items-center;
+  }
+  
+  .header-header-input--input {
+    @apply focus:outline-none;
+  }
+  
+  .header--login-button {
+    @apply text-purple border-solid border-2 border-purple rounded-md px-4;
+  }

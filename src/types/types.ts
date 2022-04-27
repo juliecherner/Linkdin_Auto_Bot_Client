@@ -1,4 +1,4 @@
-export interface I_Profile {
+export interface Profile {
   _id: string;
   name: string;
   position: string;
@@ -12,41 +12,41 @@ export interface I_Profile {
   updatedAt: Date;
 }
 
-export interface I_ProfileSorting {
+export interface ProfileSorting {
   field: string;
   order: 1 | -1;
 }
 
-export interface I_ProfileFiltering {
+export interface ProfileFiltering {
   isStared: boolean;
 }
 
-export interface I_User {
+export interface User {
   _id?: string;
   name: string;
   password: string;
   logged: string;
 }
 
-export interface I_Checkbox {
+export interface Checkbox {
   _id?: string;
   checked: boolean;
   searchFor: string;
 }
 
-export interface I_Search {
+export interface Search {
   _id?: string;
   searchWord: string;
 }
 
-export interface I_DispatchUserAction {
+export interface DispatchUserAction {
   name: string;
   payload: string;
 }
 
-export type I_Token = string;
+export type Token = string;
 
-export interface I_AuthHeader {
+export interface AuthHeader {
   headers: {
     Authorization: string;
   };
