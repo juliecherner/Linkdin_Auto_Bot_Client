@@ -1,5 +1,5 @@
 .main-page {
-    @apply bg-gray h-[calc(h-screen-4rem)];
+    @apply bg-gray h-screen;
   }
   
   .main-page--togglers {

@@ -1,8 +1,6 @@
 import axios from "axios";
 
-//let baseUrl = "https://linkedin-autobot-server.herokuapp.com/";
-
-let baseUrl = "http://localhost:8080/";
+let baseUrl = "https://linkedin-autobot-server.herokuapp.com/";
 
 const ApiHeader = axios.create({
   baseURL: baseUrl,

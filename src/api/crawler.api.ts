@@ -4,7 +4,7 @@ import { authHeader } from "./auth.api";
 
 export const scrapeProfiles = async (): Promise<void> => {
   try {
-    const { data } = await ApiHeader.post("api/crawler/crawler", authHeader());
+    const { data } = await ApiHeader.post("api/crawler", {}, authHeader());
     return data;
   } catch (error: any | AxiosError) {
     throw error;
