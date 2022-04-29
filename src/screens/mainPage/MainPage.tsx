@@ -1,4 +1,4 @@
-import { useEffect, useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import CardList from "./components/cardList/CardList";
 import Togglers from "./components/togglers/Togglers";
 import ImageArea from "./components/imageArea/imageArea";

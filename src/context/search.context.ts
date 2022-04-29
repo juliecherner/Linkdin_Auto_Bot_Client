@@ -10,7 +10,7 @@ type SearchContent = {
 
 export const SearchContext = createContext<SearchContent>({
   searchWords: [],
-  setSearchWords: (searchWords: Search[]) => {},
+  setSearchWords: () => null,
   newSearchWord: { searchWord: "" },
-  setNewSearchWord: (newSearchWord: Search) => {},
+  setNewSearchWord: () => null,
 });

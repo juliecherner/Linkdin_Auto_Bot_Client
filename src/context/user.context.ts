@@ -12,5 +12,5 @@ export const UserContext = createContext<UserContent>({
     name: "",
     logged: "",
   },
-  userDispatch: () => {},
+  userDispatch: () => null,
 });

@@ -1,12 +1,11 @@
-import { AxiosError } from "axios";
 import { Profile } from "../types/types";
 import ApiHeader from "./Api";
 import { authHeader } from "./auth.api";
-import { ProfileSorting, ProfileFiltering } from "../types/types";
+import { SortAndFilter } from "../types/types";
 
 export const getProfiles = async (
-  filter: ProfileFiltering | {}, // by field: { isStared: true }
-  sortBy: ProfileSorting | {} // by field: { createdAt: -1 } (1 = ascending, -1 = descending)
+  filter: SortAndFilter, // by field: { isStared: true }
+  sortBy: SortAndFilter // by field: { createdAt: -1 } (1 = ascending, -1 = descending)
 ): Promise<Profile[]> => {
   try {
     const { data } = await ApiHeader.post(
@@ -18,7 +17,8 @@ export const getProfiles = async (
       authHeader()
     );
     return data;
-  } catch (error: any | AxiosError) {
+  } catch (error) {
+    console.log(error);
     throw error;
   }
 };

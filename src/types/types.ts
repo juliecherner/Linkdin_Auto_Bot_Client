@@ -12,12 +12,12 @@ export interface Profile {
   updatedAt: Date;
 }
 
-export interface ProfileSorting {
+interface ProfileSorting {
   field: string;
   order: 1 | -1;
 }
 
-export interface ProfileFiltering {
+interface ProfileFiltering {
   isStared: boolean;
 }
 
@@ -51,3 +51,8 @@ export interface AuthHeader {
     Authorization: string;
   };
 }
+
+export type SortAndFilter =
+  | ProfileFiltering
+  | ProfileSorting
+  | Record<string, never>;

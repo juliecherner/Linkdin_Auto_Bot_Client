@@ -2,10 +2,10 @@
   "compilerOptions": {
     "plugins": [
       {
-        "name": "typescript-tslint-plugin",
+        "name": "typescript-eslint/eslint-plugin",
         "alwaysShowRuleFailuresAsWarnings": false,
         "ignoreDefinitionFiles": true,
-        "configFile": "../tslint.json",
+        "configFile": "../.eslint.json",
         "suppressWhileTypeErrorsPresent": false
       }
     ],

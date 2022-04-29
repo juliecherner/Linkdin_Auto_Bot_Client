@@ -11,8 +11,8 @@ type ProfileContent = {
 
 export const ProfileContext = createContext<ProfileContent>({
   profiles: [],
-  setProfiles: () => {},
+  setProfiles: () => null,
   mode: "",
-  setMode: () => {},
-  trackMode: () => {},
+  setMode: () => null,
+  trackMode: () => null,
 });
