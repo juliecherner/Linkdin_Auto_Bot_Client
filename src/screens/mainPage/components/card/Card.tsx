@@ -1,3 +1,4 @@
+import React from "react";
 import CardButtons from "../cardButtons/cardButtons";
 import { Profile } from "../../../../types/types";
 

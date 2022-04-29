@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { ProfileContext } from "../../../../context/profile.context";
 
 const togglers: string[] = ["Relevant", "Latest", "Stared"];
