@@ -8,7 +8,7 @@ const LoginPage: React.FC = () => {
     <div className="login-page">
       <LoginForm />
       <div className="login-page-unassigned">
-        <div>For Unassigned Users</div>
+        <div>For not signed up users</div>
         <div className="login-page-unassigned--link">
           <Link to="/about">Contact us</Link>
         </div>
