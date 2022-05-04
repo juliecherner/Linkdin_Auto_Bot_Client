@@ -1,10 +1,14 @@
-## Client of LinkedIn Autobot
+## Client side of LinkedIn Autobot
 
 # About
 
-The application is aimed to crawl in Linkedin and collect data according to search settings.
-Preset in search: search is procceded is Israel. But there is no other presets of search and user can add or delete searchwords.
+The application is aimed to crawl in Linkedin and collect data according to search settings./
+Preset in search: search is proceeded is Israel. But there are no other presets of search and users can add or delete search words./
 The application is designed for working on the found profiles by 1 team.
+
+# Deployment
+
+The client side of the project was deployed on [Netlify] (https://velocity-ventures-linkedin-autobot.netlify.app/)
 
 # Application functionality:
 
@@ -17,7 +21,7 @@ The application is designed for working on the found profiles by 1 team.
 
 # Signing in and signing up
 
-The application is designed for company's inner needs and it is used by 1 team and a few users. Because of this requirements there is no possibility for the user that is not a member of the team to sign up by himself.
+The application is designed for the company's inner needs and it is used by 1 team and a few users. Because of this requirement there is no possibility for the user that is not a member of the team to sign up by himself.
 
 If password and name of the user are correct, the user is redirected to the home page. In the case if not the user gets the warning about the error of logging in.
 
@@ -31,6 +35,7 @@ If password and name of the user are correct, the user is redirected to the home
 - MUI
 - Tailwind CSS
 - JWT (stored in cookies)
+- ESLint (for development)
 
 Global state of the application was managed by React Context Hook by creating 3 contexts and 3 providers:
 
@@ -95,7 +100,7 @@ Login page for signed in users
 
 Home page for signed in users
 
-It has accsess for 3 lists:
+It has access for 3 lists:
 
 - All results of crawling
 - Results (latest) sorted by the date
@@ -103,8 +108,8 @@ It has accsess for 3 lists:
 
 ![Home page for signed in users](./src/assets/readme%20images/home-signed.png)
 
-Strategy page (avaible only for signed in users):
-On this page the scraper can be ruuned by clicking on the button.
+Strategy page (available only for signed in users):\
+On this page the scraper can be runned by clicking on the button.
 
 ![Strategy page and search](./src/assets/readme%20images/search.png)
 
@@ -114,6 +119,6 @@ About page:
 
 # Further steps:
 
-- Showing deleted (hiden) profiles
-  There is no accsess to deleted (hided) profiles but they are still stored in the database. The next step will be adding a new page with all hiden profiles with an option to return them to the main list with all results of crawling.
+- Showing deleted (hidden) profiles
+  There is no access to deleted (hidden) profiles but they are still stored in the database. The next step will be adding a new page with all hidden profiles with an option to return them to the main list with all results of crawling.
 - Token storage optimization (according to safety issues)
