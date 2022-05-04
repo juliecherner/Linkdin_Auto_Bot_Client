@@ -8,19 +8,22 @@ The application is designed for working on the found profiles by 1 team.
 
 # Application functionality:
 
-1. Sign in for team members
-2. Set personal search settings for team members
-3. Get results of crawling (all, sorted by the date)
-4. Star a profile (add to a list "Stared")
-5. Delete (hide) a profile
-6. Start a process of crawling
+- Sign in for team members
+- Set personal search settings for team members
+- Get results of crawling (all, sorted by the date)
+- Star a profile (add to a list "Stared")
+- Delete (hide) a profile
+- Start a process of crawling
+
+# Signing in and signing up
 
 The application is designed for company's inner needs and it is used by 1 team and a few users. Because of this requirements there is no possibility for the user that is not a member of the team to sign up by himself.
+
 If password and name of the user are correct, the user is redirected to the home page. In the case if not the user gets the warning about the error of logging in.
 
 ![Logging error](./src/assets/readme%20images/login-error.png)
 
-Technologies:
+# Technologies:
 
 - Typescript
 - React.js and React Hooks
@@ -34,6 +37,20 @@ Global state of the application was managed by React Context Hook by creating 3 
 - for scraped profiles
 - for search words
 - for users
+
+In the development was used ESLint for Typescript with following rules in .eslinttrc.json file.
+
+```ts
+{
+    ...
+    "rules": {
+            "react/jsx-uses-react": "error",
+            "react/jsx-uses-vars": "error",
+            "react/react-in-jsx-scope": "off",
+            "react/prop-types": "off"
+        }
+}
+```
 
 # Responsivity
 
