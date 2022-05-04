@@ -8,7 +8,7 @@ The application is designed for working on the found profiles by 1 team.
 
 # Deployment
 
-The client side of the project was deployed on [Netlify] (https://velocity-ventures-linkedin-autobot.netlify.app/ "Netlify - Linkedin Autobot")
+The client side of the project was deployed on [Netlify - Linkedin Autobot](https://velocity-ventures-linkedin-autobot.netlify.app/)
 
 # Application functionality:
 
