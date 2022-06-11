@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useReducer, useEffect } from "react";
 import { UserContext } from "../context/user.context";
 import { User } from "../types/types";
 
@@ -38,7 +38,18 @@ const reducer = (state: User = initialState, action: UserReducerAction) => {
 };
 
 const UserProvider: React.FC = ({ children }) => {
-  const [userInputs, userDispatch] = useReducer(reducer, initialState);
+  const [userInputs, userDispatch] = useReducer(reducer, initialState, () => {
+    const user = localStorage.getItem("user");
+    return user ? JSON.parse(user) : initialState;
+  });
+
+  useEffect(() => {
+    const userInSessionStorage = {
+      name: userInputs.name,
+      logged: userInputs.logged,
+    };
+    localStorage.setItem("user", JSON.stringify(userInSessionStorage));
+  }, [userInputs]);
 
   return (
     <UserContext.Provider value={{ userInputs, userDispatch }}>
