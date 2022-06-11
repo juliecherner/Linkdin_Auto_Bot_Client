@@ -21,8 +21,6 @@ const CardButtons: React.FC<Props> = ({ profile }) => {
   };
 
   const hideProfile = async (profile: Profile) => {
-    console.log("try to delete", profile._id);
-    //fix it
     await deleteProfile(profile._id);
     trackMode();
   };
