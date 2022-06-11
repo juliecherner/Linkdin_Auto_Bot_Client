@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import LoginError from "../loginError/LoginError";
 import { UserContext } from "../../../../context/user.context";
 import { ProfileContext } from "../../../../context/profile.context";
-import { login } from "../../../../api/auth.api";
+import { login, clearLocalStorage } from "../../../../api/auth.api";
 import { clearCookies } from "../../../../api/cookies";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
@@ -43,13 +43,13 @@ const LoginForm: React.FC = () => {
     } else {
       changeLoginError();
     }
-    //get peciliar response from server
   };
 
   const logoutUser = (): void => {
     clearCookies();
+    clearLocalStorage();
     clearUserInfo();
-    setProfiles([]); //causes re-render
+    setProfiles([]);
     navigate("/");
   };
 

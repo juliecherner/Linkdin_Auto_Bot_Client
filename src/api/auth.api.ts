@@ -21,3 +21,7 @@ export const login = async (user: User) => {
     console.log(error);
   }
 };
+
+export const clearLocalStorage = () => {
+  sessionStorage.setItem("user", "");
+};
